@@ -599,7 +599,7 @@ const ProfileHero: React.FC = () => {
       </div>
 
       {/* Container principal do conteúdo */}
-      <div className="container mx-auto px-4 py-12 relative z-10 flex flex-col items-center">
+      <div className="container mt-12 mx-auto px-4 py-12 relative z-10 flex flex-col items-center">
         {/* Seção Hero com Perfil */}
         <div className="w-full mb-16 text-center relative">
           {/* Efeito de neon ao fundo */}
@@ -950,11 +950,11 @@ const ProfileHero: React.FC = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
               <div className="inline-block relative">
-                <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-liquid-teal to-liquid-blue animate-gradient-x title-font-alt uppercase tracking-wider">Contas em Destaque</h2>
+                <h2 className="text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-liquid-teal to-liquid-blue animate-gradient-x title-font-alt uppercase tracking-wider">Contas em Destaque</h2>
                 <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-liquid-teal/0 via-liquid-teal to-liquid-teal/0 rounded-full"></div>
                 <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-liquid-teal to-liquid-blue rounded-full"></div>
               </div>
-              <p className="text-gray-300 mt-4 text-lg">Veja nossa seleção de contas premium para Rainbow Six</p>
+              <p className="text-gray-300 mt-10 text-lg">Veja nossa seleção de contas premium para Rainbow Six</p>
             </div>
 
             {/* Controles do carrossel e indicador */}
@@ -1095,17 +1095,32 @@ const ProfileHero: React.FC = () => {
         {/* R6 Credits Packages Section */}
         <section className="w-full max-w-6xl mx-auto my-24 relative overflow-hidden">
           {/* Efeito de neon */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-b from-liquid-yellow/20 to-transparent rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-t from-liquid-yellow/20 to-transparent rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-liquid-yellow/10 via-yellow-500/10 to-liquid-yellow/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            {/* Camada de fundo com gradiente suave */}
+            <div className="absolute inset-0 bg-gradient-to-tl from-gray-900 via-indigo-950 to-gray-900 opacity-90"></div>
+
+            {/* Forma flutuante 1 - círculo com movimento */}
+            <div className="absolute top-10 left-1/4 w-[300px] h-[300px] bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full blur-2xl animate-[float_5s_ease-in-out_infinite]"></div>
+
+            {/* Forma flutuante 2 - elipse com rotação sutil */}
+            <div className="absolute bottom-20 right-1/5 w-[400px] h-[200px] bg-gradient-to-b from-cyan-500/15 to-transparent rounded-[50%] blur-xl animate-[sway_7s_ease-in-out_infinite]"></div>
+
+            {/* Linhas dinâmicas diagonais */}
+            <div className="absolute inset-0">
+              <div className="absolute w-[150%] h-px bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent -rotate-12 top-1/3 left-1/2 -translate-x-1/2 animate-[slide_6s_linear_infinite]"></div>
+              <div className="absolute w-[150%] h-px bg-gradient-to-r from-transparent via-purple-400/20 to-transparent rotate-6 bottom-1/4 left-1/2 -translate-x-1/2 animate-[slide_4s_linear_infinite]"></div>
+            </div>
+
+            {/* Partículas sutis */}
+            <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-white/50 rounded-full blur-sm animate-[blink_3s_ease-in-out_infinite]" />
+            <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-indigo-300/40 rounded-full blur-sm animate-[blink_2s_ease-in-out_infinite_delay-1s]" />
           </div>
 
           <div className="text-center mb-16 relative z-10">
-            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-liquid-yellow to-yellow-500">
+            <p className="text-gray-300 mt-5">Escolha o pacote ideal para suas conquistas</p>
+            <h2 className="text-7xl mt-6 font-bold text-transparent bg-clip-text bg-gradient-to-r from-liquid-teal to-liquid-blue animate-gradient-x title-font-alt uppercase tracking-wider">
               Pacotes de Créditos R6
             </h2>
-            <p className="text-gray-300 mt-4">Escolha o pacote ideal para suas conquistas</p>
           </div>
 
           <div className="relative z-10">
@@ -1198,14 +1213,14 @@ const ProfileHero: React.FC = () => {
                     <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/50 to-white/40 rounded-xl overflow-hidden">
                       <div className="absolute inset-0 animate-[spin_8s_linear_infinite] bg-gradient-to-t from-transparent via-liquid-yellow to-transparent"></div>
                     </div>
-                
+
                     {/* Featured badge */}
                     {pack.featured && (
                       <div className="absolute top-0 right-0 bg-liquid-yellow/80 text-liquid-navy text-xs font-bold py-1 px-3 rounded-bl-lg">
                         MAIS VENDIDO
                       </div>
                     )}
-                
+
                     {/* Card content */}
                     <div className="flex flex-col gap-4">
                       {/* Title section */}
@@ -1213,9 +1228,9 @@ const ProfileHero: React.FC = () => {
                         <h3 className="text-lg font-bold text-white">{pack.name}</h3>
                         <p className="text-sm text-gray-400">{pack.description}</p>
                       </div>
-                
+
                       <hr className="border-gray-700/50" />
-                
+
                       {/* Features list */}
                       <ul className="flex flex-col gap-2">
                         <li className="flex items-center gap-2">
@@ -1243,7 +1258,7 @@ const ProfileHero: React.FC = () => {
                           <span className="text-sm text-gray-300">Entrega Instantânea</span>
                         </li>
                       </ul>
-                
+
                       {/* Price and CTA */}
                       <div className="mt-auto">
                         <div className="flex justify-between items-end mb-4">
@@ -1271,346 +1286,8 @@ const ProfileHero: React.FC = () => {
         </section>
 
 
-        {/* Seção de Cards de Serviços Premium R6 - Com borda em vez de fundo */}
-        <section className="relative py-24 overflow-hidden mb-20">
-          {/* Efeito de neon */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-b from-liquid-teal/20 to-transparent rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-t from-liquid-blue/20 to-transparent rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-liquid-teal/10 via-liquid-blue/10 to-liquid-teal/10 rounded-full blur-3xl animate-pulse"></div>
-          </div>
+        {/* Seção de Cards de Serviços Premium R6 - Com borda em vez de fundo  ... */}
 
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center mb-10">
-              <div className="inline-block relative">
-                <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-liquid-teal to-liquid-blue animate-gradient-x title-font-alt uppercase tracking-wider">Serviços Premium R6</h2>
-                <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-liquid-teal/0 via-liquid-teal to-liquid-teal/0 rounded-full"></div>
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-liquid-teal to-liquid-blue rounded-full"></div>
-              </div>
-              <p className="text-gray-300 mt-4 text-lg">Aumente seu desempenho com nossos serviços exclusivos</p>
-            </div>
-
-            {/* Cards de serviços */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
-              {/* Card Elo Boost - Versão com relevo */}
-              <div className="backdrop-blur-sm border border-liquid-teal/30 rounded-lg overflow-hidden relative group transition-all duration-300 transform hover:-translate-y-1 hover:border-liquid-teal/60 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),_0_8px_16px_rgba(0,0,0,0.4)]">
-                <div className="absolute inset-0" style={{
-                  background: 'linear-gradient(135deg, rgba(0,200,255,0.05) 0%, transparent 100%)',
-                }}></div>
-
-                {/* Linhas de relevo */}
-                <div className="absolute inset-0 overflow-hidden opacity-20">
-                  <div className="h-px w-full bg-gradient-to-r from-transparent via-liquid-teal/80 to-transparent"></div>
-                  <div className="absolute bottom-0 h-px w-full bg-gradient-to-r from-transparent via-liquid-teal/30 to-transparent"></div>
-                  <div className="absolute left-0 w-px h-full bg-gradient-to-b from-transparent via-liquid-teal/30 to-transparent"></div>
-                  <div className="absolute right-0 w-px h-full bg-gradient-to-b from-transparent via-liquid-teal/30 to-transparent"></div>
-                </div>
-
-                {/* Imagem de fundo do card */}
-                <div className="absolute inset-0 opacity-5">
-                  <img
-                    src="/images/services/elo-boost.jpg"
-                    alt="Elo Boost"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Conteúdo do Card */}
-                <div className="relative z-10">
-                  {/* Header com badge */}
-                  <div className="relative">
-                    <div className="p-4 border-b border-liquid-teal/20">
-                      <div className="flex items-center">
-                        <div className="w-12 h-12 bg-gradient-to-br from-liquid-teal to-liquid-blue rounded-lg flex items-center justify-center mr-4 shadow-lg transform transition-transform group-hover:scale-110">
-                          <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-white">Elo Boost</h3>
-                          <div className="flex items-center">
-                            <span className="text-xs text-liquid-teal font-medium">SERVIÇO PREMIUM</span>
-                            <div className="w-2 h-2 bg-liquid-teal rounded-full animate-pulse ml-2"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="absolute top-0 right-0 bg-gradient-to-r from-yellow-500 to-yellow-600 px-3 py-1 rounded-bl-lg text-xs font-bold text-liquid-navy shadow-md">
-                      TOP VENDAS
-                    </div>
-                  </div>
-
-                  {/* Body */}
-                  <div className="p-4 space-y-4">
-                    <div className="space-y-3">
-                      <div className="flex items-center">
-                        <div className="w-5 h-5 bg-liquid-teal/10 rounded-full flex items-center justify-center mr-2 border border-liquid-teal/30">
-                          <svg className="w-3 h-3 text-liquid-teal" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <span className="text-gray-300 text-sm">Jogadores profissionais</span>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="w-5 h-5 bg-liquid-teal/10 rounded-full flex items-center justify-center mr-2 border border-liquid-teal/30">
-                          <svg className="w-3 h-3 text-liquid-teal" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <span className="text-gray-300 text-sm">Subida rápida e garantida</span>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="w-5 h-5 bg-liquid-teal/10 rounded-full flex items-center justify-center mr-2 border border-liquid-teal/30">
-                          <svg className="w-3 h-3 text-liquid-teal" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <span className="text-gray-300 text-sm">Todos os ranks disponíveis</span>
-                      </div>
-                    </div>
-
-                    {/* Progress Bar */}
-                    <div className="w-full mt-1 mb-1">
-                      <div className="flex justify-between items-center mb-1">
-                        <span className="text-xs text-gray-400">Disponibilidade</span>
-                        <span className="text-xs text-liquid-teal">80%</span>
-                      </div>
-                      <div className="h-1.5 w-full bg-black/20 backdrop-blur-sm rounded-full overflow-hidden border border-liquid-teal/10">
-                        <div className="h-full bg-gradient-to-r from-liquid-teal to-liquid-blue rounded-full" style={{ width: '80%' }}></div>
-                      </div>
-                    </div>
-
-                    {/* Preço e CTA */}
-                    <div className="mt-2 pt-2 border-t border-liquid-teal/20 flex items-center justify-between">
-                      <div>
-                        <span className="text-gray-400 text-xs">A partir de</span>
-                        <div className="text-2xl font-bold text-white">R$ 99,90</div>
-                      </div>
-                      <button className="bg-gradient-to-r from-liquid-teal to-liquid-blue hover:from-liquid-teal/80 hover:to-liquid-blue/80 text-white py-2 px-4 rounded-md transition-all flex items-center shadow-lg">
-                        <span>Contratar</span>
-                        <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card Venda de Contas - Versão com relevo */}
-              <div className="backdrop-blur-sm border border-liquid-blue/30 rounded-lg overflow-hidden relative group transition-all duration-300 transform hover:-translate-y-1 hover:border-liquid-blue/60 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),_0_8px_16px_rgba(0,0,0,0.4)]">
-                <div className="absolute inset-0" style={{
-                  background: 'linear-gradient(135deg, rgba(0,100,255,0.05) 0%, transparent 100%)',
-                }}></div>
-
-                {/* Linhas de relevo */}
-                <div className="absolute inset-0 overflow-hidden opacity-20">
-                  <div className="h-px w-full bg-gradient-to-r from-transparent via-liquid-blue/80 to-transparent"></div>
-                  <div className="absolute bottom-0 h-px w-full bg-gradient-to-r from-transparent via-liquid-blue/30 to-transparent"></div>
-                  <div className="absolute left-0 w-px h-full bg-gradient-to-b from-transparent via-liquid-blue/30 to-transparent"></div>
-                  <div className="absolute right-0 w-px h-full bg-gradient-to-b from-transparent via-liquid-blue/30 to-transparent"></div>
-                </div>
-
-                {/* Imagem de fundo do card */}
-                <div className="absolute inset-0 opacity-5">
-                  <img
-                    src="/images/services/premium-accounts.jpg"
-                    alt="Contas Premium"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Conteúdo do Card */}
-                <div className="relative z-10">
-                  {/* Header com badge */}
-                  <div className="relative">
-                    <div className="p-4 border-b border-liquid-blue/20">
-                      <div className="flex items-center">
-                        <div className="w-12 h-12 bg-gradient-to-br from-liquid-blue to-blue-600 rounded-lg flex items-center justify-center mr-4 shadow-lg transform transition-transform group-hover:scale-110">
-                          <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z" stroke="white" strokeWidth="2" />
-                            <path d="M3 21C3 17.134 7.13401 14 12 14C16.866 14 21 17.134 21 21" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-white">Contas Premium</h3>
-                          <div className="flex items-center">
-                            <span className="text-xs text-liquid-blue font-medium">VERIFICADAS</span>
-                            <div className="w-2 h-2 bg-liquid-blue rounded-full animate-pulse ml-2"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="absolute top-0 right-0 bg-liquid-blue/60 px-3 py-1 rounded-bl-lg text-xs font-bold text-white shadow-md flex items-center">
-                      <span className="animate-pulse mr-1 w-2 h-2 bg-white rounded-full"></span>
-                      LIMITADO
-                    </div>
-                  </div>
-
-                  {/* Body */}
-                  <div className="p-4 space-y-4">
-                    <div className="space-y-3">
-                      <div className="flex items-center">
-                        <div className="w-5 h-5 bg-liquid-blue/10 rounded-full flex items-center justify-center mr-2 border border-liquid-blue/30">
-                          <svg className="w-3 h-3 text-liquid-blue" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <span className="text-gray-300 text-sm">Contas com skins raras</span>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="w-5 h-5 bg-liquid-blue/10 rounded-full flex items-center justify-center mr-2 border border-liquid-blue/30">
-                          <svg className="w-3 h-3 text-liquid-blue" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <span className="text-gray-300 text-sm">Stats impressionantes</span>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="w-5 h-5 bg-liquid-blue/10 rounded-full flex items-center justify-center mr-2 border border-liquid-blue/30">
-                          <svg className="w-3 h-3 text-liquid-blue" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <span className="text-gray-300 text-sm">Transferência garantida</span>
-                      </div>
-                    </div>
-
-                    {/* Progress Bar */}
-                    <div className="w-full mt-1 mb-1">
-                      <div className="flex justify-between items-center mb-1">
-                        <span className="text-xs text-gray-400">Disponibilidade</span>
-                        <span className="text-xs text-liquid-blue">35%</span>
-                      </div>
-                      <div className="h-1.5 w-full bg-black/20 backdrop-blur-sm rounded-full overflow-hidden border border-liquid-blue/10">
-                        <div className="h-full bg-gradient-to-r from-liquid-blue to-blue-600 rounded-full" style={{ width: '35%' }}></div>
-                      </div>
-                    </div>
-
-                    {/* Preço e CTA */}
-                    <div className="mt-2 pt-2 border-t border-liquid-blue/20 flex items-center justify-between">
-                      <div>
-                        <span className="text-gray-400 text-xs">A partir de</span>
-                        <div className="text-2xl font-bold text-white">R$ 249,90</div>
-                      </div>
-                      <button className="bg-gradient-to-r from-liquid-blue to-blue-600 hover:from-liquid-blue/80 hover:to-blue-600/80 text-white py-2 px-4 rounded-md transition-all flex items-center shadow-lg">
-                        <span>Ver Catálogo</span>
-                        <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card Créditos R6 - Versão com relevo */}
-              <div className="backdrop-blur-sm border border-liquid-yellow/30 rounded-lg overflow-hidden relative group transition-all duration-300 transform hover:-translate-y-1 hover:border-liquid-yellow/60 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),_0_8px_16px_rgba(0,0,0,0.4)]">
-                <div className="absolute inset-0" style={{
-                  background: 'linear-gradient(135deg, rgba(255,215,0,0.05) 0%, transparent 100%)',
-                }}></div>
-
-                {/* Linhas de relevo */}
-                <div className="absolute inset-0 overflow-hidden opacity-20">
-                  <div className="h-px w-full bg-gradient-to-r from-transparent via-liquid-yellow/80 to-transparent"></div>
-                  <div className="absolute bottom-0 h-px w-full bg-gradient-to-r from-transparent via-liquid-yellow/30 to-transparent"></div>
-                  <div className="absolute left-0 w-px h-full bg-gradient-to-b from-transparent via-liquid-yellow/30 to-transparent"></div>
-                  <div className="absolute right-0 w-px h-full bg-gradient-to-b from-transparent via-liquid-yellow/30 to-transparent"></div>
-                </div>
-
-                {/* Imagem de fundo do card */}
-                <div className="absolute inset-0 opacity-5">
-                  <img
-                    src="/images/services/r6-credits.jpg"
-                    alt="Créditos R6"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Conteúdo do Card */}
-                <div className="relative z-10">
-                  {/* Header com badge */}
-                  <div className="relative">
-                    <div className="p-4 border-b border-liquid-yellow/20">
-                      <div className="flex items-center">
-                        <div className="w-12 h-12 bg-gradient-to-br from-liquid-yellow to-yellow-600 rounded-lg flex items-center justify-center mr-4 shadow-lg transform transition-transform group-hover:scale-110">
-                          <svg className="w-6 h-6 text-liquid-navy" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L14.85 8.3L22 9.3L17 14.14L18.18 21L12 17.77L5.82 21L7 14.14L2 9.3L9.15 8.3L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-white">Créditos R6</h3>
-                          <div className="flex items-center">
-                            <span className="text-xs text-liquid-yellow font-medium">ENTREGA IMEDIATA</span>
-                            <div className="w-2 h-2 bg-liquid-yellow rounded-full animate-pulse ml-2"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="absolute top-0 right-0 bg-gradient-to-r from-liquid-yellow to-yellow-600 px-3 py-1 rounded-bl-lg text-xs font-bold text-liquid-navy shadow-md">
-                      15% OFF
-                    </div>
-                  </div>
-
-                  {/* Body */}
-                  <div className="p-4 space-y-4">
-                    <div className="space-y-3">
-                      <div className="flex items-center">
-                        <div className="w-5 h-5 bg-liquid-yellow/10 rounded-full flex items-center justify-center mr-2 border border-liquid-yellow/30">
-                          <svg className="w-3 h-3 text-liquid-yellow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <span className="text-gray-300 text-sm">Preços abaixo do mercado</span>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="w-5 h-5 bg-liquid-yellow/10 rounded-full flex items-center justify-center mr-2 border border-liquid-yellow/30">
-                          <svg className="w-3 h-3 text-liquid-yellow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <span className="text-gray-300 text-sm">100% de segurança</span>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="w-5 h-5 bg-liquid-yellow/10 rounded-full flex items-center justify-center mr-2 border border-liquid-yellow/30">
-                          <svg className="w-3 h-3 text-liquid-yellow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <span className="text-gray-300 text-sm">Vários métodos de pagamento</span>
-                      </div>
-                    </div>
-
-                    {/* Progress Bar */}
-                    <div className="w-full mt-1 mb-1">
-                      <div className="flex justify-between items-center mb-1">
-                        <span className="text-xs text-gray-400">Disponibilidade</span>
-                        <span className="text-xs text-liquid-yellow">100%</span>
-                      </div>
-                      <div className="h-1.5 w-full bg-black/20 backdrop-blur-sm rounded-full overflow-hidden border border-liquid-yellow/10">
-                        <div className="h-full bg-gradient-to-r from-liquid-yellow to-yellow-600 rounded-full" style={{ width: '100%' }}></div>
-                      </div>
-                    </div>
-
-                    {/* Preço e CTA */}
-                    <div className="mt-2 pt-2 border-t border-liquid-yellow/20 flex items-center justify-between">
-                      <div>
-                        <span className="text-gray-400 text-xs">Pacotes a partir de</span>
-                        <div className="text-2xl font-bold text-white">R$ 19,90</div>
-                      </div>
-                      <button className="bg-gradient-to-r from-liquid-yellow to-yellow-600 hover:from-liquid-yellow/80 hover:to-yellow-600/80 text-liquid-navy font-bold py-2 px-4 rounded-md transition-all flex items-center shadow-lg">
-                        <span>Comprar</span>
-                        <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
 
         {/* Seção de Fan Stories */}

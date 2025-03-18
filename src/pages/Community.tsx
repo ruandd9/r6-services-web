@@ -56,24 +56,7 @@ const Community: React.FC = () => {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-liquid-navy text-white py-20">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-             Seu Arsenal Começa Aqui
-            </h1>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
-              A conta ideal para arrasar está a um clique. Compre contas personalizadas, troque as que não usa, 
-              adicione créditos ou suba de ranking com nossos elo boosts. Fique por dentro de tudo, ganhe pontos 
-              participando e leve recompensa.
-            </p>
-            <a href="#join" className="inline-flex items-center bg-liquid-yellow text-liquid-navy px-6 py-3 rounded-md font-bold hover:bg-yellow-400 transition">
-              Pegue sua conta e lidere
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </a>
-          </div>
-        </section>
+        
 
         {/* Componente ProfileHero */}
         <ProfileHero />
