@@ -44,7 +44,7 @@ Para desenvolvedores que desejam contribuir ou executar o projeto localmente:
 1. Clone o repositório:
 ```bash
 git clone https://github.com/ruandd9/r6-services-web.git
-cd r6marketrade
+cd r6-services-web
 ```
 
 2. Instale as dependências:
