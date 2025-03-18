@@ -133,8 +133,8 @@ const ProfileHero: React.FC = () => {
       rankColor: "from-purple-600 to-blue-500",
       rankIcon: (
         <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 15L8.5 10L15.5 10L12 15Z" fill="white"/>
-          <path d="M20 20H4L12 4L20 20Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M12 15L8.5 10L15.5 10L12 15Z" fill="white" />
+          <path d="M20 20H4L12 4L20 20Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
       image: "/images/accounts/Y5S4_STADIUM2_CARD_Vigil.png",
@@ -157,7 +157,7 @@ const ProfileHero: React.FC = () => {
       rankColor: "from-yellow-500 to-amber-600",
       rankIcon: (
         <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z" fill="currentColor"/>
+          <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z" fill="currentColor" />
         </svg>
       ),
       badgeText: "CONTA RARA",
@@ -181,7 +181,7 @@ const ProfileHero: React.FC = () => {
       rankColor: "from-blue-500 to-indigo-500",
       rankIcon: (
         <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 20H4L12 4L20 20Z" fill="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M20 20H4L12 4L20 20Z" fill="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
       badgeText: "-20% OFF",
@@ -207,7 +207,7 @@ const ProfileHero: React.FC = () => {
       rankColor: "from-yellow-400 to-amber-500",
       rankIcon: (
         <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z" fill="currentColor"/>
+          <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z" fill="currentColor" />
         </svg>
       ),
       image: "/images/accounts/Y5S4_STADIUM2_CARD_IQ.png",
@@ -228,8 +228,8 @@ const ProfileHero: React.FC = () => {
       rankColor: "from-purple-600 to-blue-500",
       rankIcon: (
         <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 15L8.5 10L15.5 10L12 15Z" fill="white"/>
-          <path d="M20 20H4L12 4L20 20Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M12 15L8.5 10L15.5 10L12 15Z" fill="white" />
+          <path d="M20 20H4L12 4L20 20Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
       badgeText: "PRO PLAYER",
@@ -254,8 +254,8 @@ const ProfileHero: React.FC = () => {
       rankColor: "from-gray-400 to-gray-500",
       rankIcon: (
         <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 15L8.5 10L15.5 10L12 15Z" fill="white"/>
-          <path d="M20 20H4L12 4L20 20Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M12 15L8.5 10L15.5 10L12 15Z" fill="white" />
+          <path d="M20 20H4L12 4L20 20Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
       badgeText: "INICIANTE",
@@ -276,18 +276,18 @@ const ProfileHero: React.FC = () => {
 
   // Calcular o total de páginas
   const totalPages = Math.ceil(accounts.length / accountsPerPage);
-  
+
   // Obter as contas da página atual
   const currentAccounts = accounts.slice(
-    currentPage * accountsPerPage, 
+    currentPage * accountsPerPage,
     (currentPage + 1) * accountsPerPage
   );
-  
+
   // Função para ir para a próxima página
   const nextPage = () => {
     setCurrentPage((prev) => (prev === totalPages - 1 ? 0 : prev + 1));
   };
-  
+
   // Função para ir para a página anterior
   const prevPage = () => {
     setCurrentPage((prev) => (prev === 0 ? totalPages - 1 : prev - 1));
@@ -413,12 +413,12 @@ const ProfileHero: React.FC = () => {
           <div className="flex items-center justify-between w-full h-14 rounded-lg bg-[#001a45]/95 backdrop-blur-sm px-[10px] border border-liquid-teal/30 shadow-lg shadow-liquid-teal/10 animate-float overflow-hidden" style={{ animationDuration: '4s' }}>
             <div className="flex gap-2">
               <div className="text-liquid-teal bg-liquid-teal/10 backdrop-blur-xl p-1.5 rounded-lg">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  strokeWidth="1.8" 
-                  stroke="currentColor" 
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.8"
+                  stroke="currentColor"
                   className="w-6 h-6 shadow-liquid-teal"
                 >
                   <path d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21" stroke="currentColor" strokeWidth="2" />
@@ -455,12 +455,12 @@ const ProfileHero: React.FC = () => {
           <div className="flex items-center justify-between w-full h-14 rounded-lg bg-[#001a45]/95 backdrop-blur-sm px-[10px] border border-liquid-yellow/30 shadow-lg shadow-liquid-yellow/10 animate-float overflow-hidden" style={{ animationDuration: '5s', animationDelay: '1s' }}>
             <div className="flex gap-2">
               <div className="text-liquid-yellow bg-liquid-yellow/10 backdrop-blur-xl p-1.5 rounded-lg">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  strokeWidth="1.8" 
-                  stroke="currentColor" 
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.8"
+                  stroke="currentColor"
                   className="w-6 h-6 shadow-liquid-yellow"
                 >
                   <path d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z" stroke="currentColor" strokeWidth="2" />
@@ -498,12 +498,12 @@ const ProfileHero: React.FC = () => {
           <div className="flex items-center justify-between w-full h-14 rounded-lg bg-[#001a45]/95 backdrop-blur-sm px-[10px] border border-liquid-blue/30 shadow-lg shadow-liquid-blue/10 animate-float overflow-hidden" style={{ animationDuration: '6s', animationDelay: '2s' }}>
             <div className="flex gap-2">
               <div className="text-liquid-blue bg-liquid-blue/10 backdrop-blur-xl p-1.5 rounded-lg">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  strokeWidth="1.8" 
-                  stroke="currentColor" 
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.8"
+                  stroke="currentColor"
                   className="w-6 h-6 shadow-liquid-blue"
                 >
                   <path d="M12 2L14.85 8.3L22 9.3L17 14.14L18.18 21L12 17.77L5.82 21L7 14.14L2 9.3L9.15 8.3L12 2Z" stroke="currentColor" strokeWidth="2" />
@@ -540,12 +540,12 @@ const ProfileHero: React.FC = () => {
           <div className="flex items-center justify-between w-full h-14 rounded-lg bg-[#001a45]/95 backdrop-blur-sm px-[10px] border border-red-500/30 shadow-lg shadow-red-500/10 animate-float overflow-hidden" style={{ animationDuration: '4.5s', animationDelay: '0.5s' }}>
             <div className="flex gap-2">
               <div className="text-red-500 bg-red-500/10 backdrop-blur-xl p-1.5 rounded-lg">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  strokeWidth="1.8" 
-                  stroke="currentColor" 
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.8"
+                  stroke="currentColor"
                   className="w-6 h-6 shadow-red-500"
                 >
                   <path d="M12 15V17M12 7V13M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -579,7 +579,7 @@ const ProfileHero: React.FC = () => {
         )}
 
         {/* Nova notificação com design moderno */}
-        
+
       </div>
 
       {/* Grade de fundo */}
@@ -607,7 +607,7 @@ const ProfileHero: React.FC = () => {
             <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-b from-liquid-teal/20 to-transparent rounded-full blur-3xl"></div>
             <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-t from-liquid-blue/20 to-transparent rounded-full blur-3xl"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-liquid-teal/10 via-liquid-blue/10 to-liquid-teal/10 rounded-full blur-3xl animate-pulse"></div>
-            
+
             {/* Linhas de escaneamento */}
             <div className="absolute inset-0 overflow-hidden" style={{ transform: 'translateZ(20px)' }}>
               {/* Linha de escaneamento principal */}
@@ -618,7 +618,7 @@ const ProfileHero: React.FC = () => {
                   boxShadow: '0 0 10px 5px rgba(0, 200, 255, 0.15)'
                 }}
               ></div>
-              
+
               {/* Grade holográfica */}
               <div className="absolute inset-0 opacity-10" style={{
                 backgroundImage: 'linear-gradient(0deg, transparent 90%, rgba(0, 200, 255, 0.2) 100%), linear-gradient(90deg, transparent 90%, rgba(0, 200, 255, 0.2) 100%)',
@@ -684,7 +684,7 @@ const ProfileHero: React.FC = () => {
           </div>
 
           <p className="text-gray-300 max-w-2xl mx-auto text-lg mb-8">
-          Adquira contas e créditos exclusivos de Rainbow Six! Compre de forma rápida e segura para aprimorar sua experiência de jogo.
+            Adquira contas e créditos exclusivos de Rainbow Six! Compre de forma rápida e segura para aprimorar sua experiência de jogo.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
@@ -746,7 +746,7 @@ const ProfileHero: React.FC = () => {
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {/* Renderiza o fundo holográfico */}
             {renderBannerBackground()}
-            
+
             {/* Partículas animadas */}
             <div className="absolute top-0 left-0 w-full h-full">
               <div className="absolute w-2 h-2 bg-liquid-teal rounded-full animate-float" style={{ top: '10%', left: '5%', animationDelay: '0s', opacity: 0.6 }}></div>
@@ -757,7 +757,7 @@ const ProfileHero: React.FC = () => {
               <div className="absolute w-2 h-2 bg-liquid-blue rounded-full animate-float" style={{ top: '45%', left: '95%', animationDelay: '2.5s', opacity: 0.6 }}></div>
             </div>
           </div>
-          
+
           {/* Conteúdo do banner */}
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-5xl mx-auto">
@@ -768,31 +768,31 @@ const ProfileHero: React.FC = () => {
                     <div className="w-2 h-2 rounded-full bg-liquid-teal animate-pulse mr-2"></div>
                     <span className="text-xs font-medium text-liquid-teal uppercase tracking-wider">Treinamento Premium</span>
                   </div>
-                  
+
                   <h2 className="text-3xl md:text-4xl font-bold text-white">
-                  Aproveite nossos <span className="text-liquid-teal">serviços </span> <span className="text-liquid-yellow">aprimore sua experiência em Rainbow Six! </span>
+                    Aproveite nossos <span className="text-liquid-teal">serviços </span> <span className="text-liquid-yellow">aprimore sua experiência em Rainbow Six! </span>
                   </h2>
-                  
+
                   <p className="text-gray-300">
-                  compre contas, créditos e itens premium de forma rápida e segura. Eleve seu jogo com a ajuda dos melhores recursos disponíveis!"
+                    compre contas, créditos e itens premium de forma rápida e segura. Eleve seu jogo com a ajuda dos melhores recursos disponíveis!"
                   </p>
-                  
+
                   <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
-                    <a 
-                      href="#signup" 
+                    <a
+                      href="#signup"
                       className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-liquid-teal to-liquid-blue text-white font-medium rounded-md shadow-lg shadow-liquid-teal/20 hover:shadow-liquid-teal/40 transition-all transform hover:-translate-y-1"
                     >
                       Acessar Catalogo de contas
                     </a>
-                    <a 
-                      href="#learn-more" 
+                    <a
+                      href="#learn-more"
                       className="w-full sm:w-auto px-8 py-3 bg-transparent border border-liquid-teal/50 text-liquid-teal font-medium rounded-md hover:bg-liquid-teal/10 transition-all"
                     >
                       Ver Creditos R6
                     </a>
                   </div>
                 </div>
-                
+
                 {/* Lado direito - Imagem ilustrativa */}
                 <div className="md:w-1/2 relative">
                   <div className="aspect-[4/3] relative">
@@ -802,7 +802,7 @@ const ProfileHero: React.FC = () => {
                       <div className="absolute top-0 right-0 w-40 h-40 bg-liquid-teal/20 rounded-full filter blur-xl"></div>
                       <div className="absolute bottom-0 left-0 w-40 h-40 bg-liquid-blue/20 rounded-full filter blur-xl"></div>
                     </div>
-                    
+
                     {/* Anúncio de compra e venda de contas */}
                     <div className="absolute inset-8 bg-black/60 rounded border border-liquid-teal/40 backdrop-blur-sm shadow-lg flex flex-col">
                       {/* Header com título */}
@@ -810,7 +810,7 @@ const ProfileHero: React.FC = () => {
                         <div className="flex items-center gap-2">
                           <div className="w-6 h-6 bg-liquid-teal/20 rounded-md flex items-center justify-center border border-liquid-teal/40">
                             <svg className="w-3.5 h-3.5 text-liquid-teal" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M19 9L12 16L5 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              <path d="M19 9L12 16L5 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                           </div>
                           <span className="text-xs font-medium text-white">Mercado de Contas</span>
@@ -822,7 +822,7 @@ const ProfileHero: React.FC = () => {
                           </div>
                         </div>
                       </div>
-                      
+
                       {/* Conteúdo do anúncio */}
                       <div className="flex-1 p-4 flex flex-col gap-3">
                         {/* Título principal */}
@@ -830,7 +830,7 @@ const ProfileHero: React.FC = () => {
                           <h3 className="text-lg font-bold text-liquid-yellow">Marketplace Oficial R6</h3>
                           <p className="text-xs text-gray-400">Compre, venda e troque contas com segurança</p>
                         </div>
-                        
+
                         {/* Destaques de contas */}
                         <div className="grid grid-cols-2 gap-2">
                           {/* Conta Premium */}
@@ -839,8 +839,8 @@ const ProfileHero: React.FC = () => {
                             <div className="flex items-start gap-2">
                               <div className="w-8 h-8 bg-gradient-to-br from-liquid-teal to-liquid-blue rounded-md flex-shrink-0 flex items-center justify-center">
                                 <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z" stroke="currentColor" strokeWidth="2"/>
-                                  <path d="M3 21C3 17.134 7.13401 14 12 14C16.866 14 21 17.134 21 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                                  <path d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z" stroke="currentColor" strokeWidth="2" />
+                                  <path d="M3 21C3 17.134 7.13401 14 12 14C16.866 14 21 17.134 21 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                                 </svg>
                               </div>
                               <div>
@@ -854,14 +854,14 @@ const ProfileHero: React.FC = () => {
                               <span className="text-[8px] text-gray-400">ID #2854</span>
                             </div>
                           </div>
-                          
+
                           {/* Conta Elite */}
                           <div className="bg-black/40 border border-liquid-yellow/20 rounded p-2 relative group">
                             <div className="absolute -top-1 -right-1 bg-liquid-yellow px-1.5 rounded-full text-[8px] font-bold text-black">ELITE</div>
                             <div className="flex items-start gap-2">
                               <div className="w-8 h-8 bg-gradient-to-br from-liquid-yellow to-yellow-600 rounded-md flex-shrink-0 flex items-center justify-center">
                                 <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M12 15V17M12 7V13M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                                  <path d="M12 15V17M12 7V13M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                                 </svg>
                               </div>
                               <div>
@@ -876,7 +876,7 @@ const ProfileHero: React.FC = () => {
                             </div>
                           </div>
                         </div>
-                        
+
                         {/* Estatísticas */}
                         <div className="grid grid-cols-3 gap-2 my-1">
                           <div className="bg-black/40 border border-liquid-teal/20 rounded p-2 text-center">
@@ -892,21 +892,21 @@ const ProfileHero: React.FC = () => {
                             <span className="text-sm text-liquid-blue font-bold">4.92★</span>
                           </div>
                         </div>
-                        
-            
+
+
                         {/* CTA */}
                         <div className="mt-auto pt-5">
                           <button className="w-full bg-gradient-to-r from-liquid-teal to-liquid-blue hover:from-liquid-teal/90 hover:to-liquid-blue/90 text-white text-sm py-2 rounded-md transition-all flex items-center justify-center">
                             <span>Acessar Marketplace</span>
                             <svg className="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                           </button>
                         </div>
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Badge flutuante */}
                   <div className="absolute -top-4 -right-4 bg-gradient-to-br from-red-500 to-red-700 text-white text-xs font-bold py-2 px-4 rounded-full rotate-12 shadow-lg border-2 border-red-400 z-10">
                     MERCADO SEGURO
@@ -916,7 +916,7 @@ const ProfileHero: React.FC = () => {
             </div>
           </div>
         </section>
-        
+
         {/* Banner decorativo holográfico com Rainbow Six */}
         <div className="relative w-full my-12 overflow-hidden">
           {/* Background semelhante ao banner acima */}
@@ -929,7 +929,7 @@ const ProfileHero: React.FC = () => {
           </div>
         </div>
 
-                {/* Mini Catálogo de Contas - Carrossel de contas à venda */}
+        {/* Mini Catálogo de Contas - Carrossel de contas à venda */}
 
 
         <section className="py-16 relative overflow-hidden my-12">
@@ -940,13 +940,13 @@ const ProfileHero: React.FC = () => {
               backgroundSize: '50px 50px'
             }}></div>
           </div>
-          
+
           {/* Linhas decorativas */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-liquid-blue/50 to-transparent"></div>
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-liquid-blue/50 to-transparent"></div>
           </div>
-          
+
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
               <div className="inline-block relative">
@@ -956,7 +956,7 @@ const ProfileHero: React.FC = () => {
               </div>
               <p className="text-gray-300 mt-4 text-lg">Veja nossa seleção de contas premium para Rainbow Six</p>
             </div>
-            
+
             {/* Controles do carrossel e indicador */}
             <div className="relative">
               <div className="flex justify-between items-center mb-6">
@@ -967,26 +967,26 @@ const ProfileHero: React.FC = () => {
                   </span>
                 </div>
                 <div className="flex space-x-2">
-                  <button 
+                  <button
                     className="bg-black/20 hover:bg-black/30 border border-liquid-blue/30 p-2 rounded-full transition-all backdrop-blur-sm"
                     onClick={prevPage}
                   >
                     <svg className="w-4 h-4 text-liquid-blue" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </button>
-                  <button 
+                  <button
                     className="bg-black/20 hover:bg-black/30 border border-liquid-blue/30 p-2 rounded-full transition-all backdrop-blur-sm"
                     onClick={nextPage}
                   >
                     <svg className="w-4 h-4 text-liquid-blue" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </button>
                 </div>
               </div>
             </div>
-            
+
             {/* Carrossel de contas - Grid responsivo */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
               {currentAccounts.map((account) => (
@@ -998,25 +998,25 @@ const ProfileHero: React.FC = () => {
                     }}></div>
                     <div className="absolute h-[500%] w-[500%] top-[-250%] left-[-250%] bg-gradient-to-r from-transparent via-blue-500/5 to-transparent transform rotate-45 animate-[marquee_20s_linear_infinite]"></div>
                   </div>
-                  
+
                   {/* Tag Rank */}
                   <div className={`absolute top-2 left-2 bg-gradient-to-r ${account.rankColor} px-2 py-1 rounded text-xs font-bold text-white shadow-md z-20 flex items-center`}>
                     {account.rankIcon}
                     {account.rank}
                   </div>
-                  
+
                   {/* Tag de tipo de conta ou selo de promoção */}
                   {account.badgeText && (
                     <div className={`absolute top-2 right-2 ${account.badgeColor} px-2 py-1 rounded text-xs font-bold z-20 shadow-md`}>
                       {account.badgeText}
                     </div>
                   )}
-                  
+
                   {/* Imagem da conta */}
                   <div className="h-80 relative">
-                    <img 
-                      src={account.image} 
-                      alt={`Conta ${account.rank}`} 
+                    <img
+                      src={account.image}
+                      alt={`Conta ${account.rank}`}
                       className="w-full h-full object-contain"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
@@ -1025,7 +1025,7 @@ const ProfileHero: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                   </div>
-                  
+
                   {/* Info da conta */}
                   <div className="p-4 relative z-10">
                     <div className="flex justify-between items-start mb-2">
@@ -1037,7 +1037,7 @@ const ProfileHero: React.FC = () => {
                         <div className="text-xl font-bold text-white">{account.price}</div>
                       </div>
                     </div>
-                    
+
                     <div className="space-y-2 mb-3">
                       <div className="flex items-center text-sm text-gray-300">
                         <span className="w-3 h-3 bg-liquid-blue/20 rounded-full flex items-center justify-center mr-2">
@@ -1058,38 +1058,218 @@ const ProfileHero: React.FC = () => {
                         {account.stats}
                       </div>
                     </div>
-                    
+
                     {/* Tags */}
                     <div className="flex flex-wrap gap-1 mb-3">
                       {account.tags.map((tag, index) => (
                         <span key={index} className={`text-xs px-2 py-0.5 ${tag.color} rounded`}>{tag.text}</span>
                       ))}
                     </div>
-                    
+
                     {/* Botão */}
                     <button className="w-full bg-gradient-to-r from-liquid-blue to-blue-600 hover:from-liquid-blue/90 hover:to-blue-600/90 text-white py-2 rounded-md transition-all flex items-center justify-center mt-2">
                       <span>Ver detalhes</span>
                       <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </button>
                   </div>
                 </div>
               ))}
             </div>
-            
+
             {/* Botão para explorar mais */}
             <div className="mt-10 text-center">
               <button className="bg-black/20 hover:bg-black/30 text-liquid-blue border border-liquid-blue/30 px-6 py-3 rounded-md backdrop-blur-sm transition-all hover:border-liquid-blue/60 inline-flex items-center">
                 <span>EXPLORAR CATÁLOGO COMPLETO</span>
                 <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
               <p className="text-gray-400 text-xs mt-2">{accounts.length} contas disponíveis para compra imediata</p>
             </div>
           </div>
         </section>
+
+
+        {/* R6 Credits Packages Section */}
+        <section className="w-full max-w-6xl mx-auto my-24 relative overflow-hidden">
+          {/* Efeito de neon */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-b from-liquid-yellow/20 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-t from-liquid-yellow/20 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-liquid-yellow/10 via-yellow-500/10 to-liquid-yellow/10 rounded-full blur-3xl animate-pulse"></div>
+          </div>
+
+          <div className="text-center mb-16 relative z-10">
+            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-liquid-yellow to-yellow-500">
+              Pacotes de Créditos R6
+            </h2>
+            <p className="text-gray-300 mt-4">Escolha o pacote ideal para suas conquistas</p>
+          </div>
+
+          <div className="relative z-10">
+            {/* Decorative elements */}
+            <div className="absolute inset-0 bg-gradient-to-b from-liquid-yellow/5 to-transparent rounded-3xl"></div>
+            <div className="absolute -top-5 -right-5 w-24 h-24 bg-liquid-yellow/10 rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-5 -left-5 w-32 h-32 bg-yellow-500/10 rounded-full blur-2xl"></div>
+
+            {/* Scroll container */}
+            <div className="relative max-h-[600px] overflow-y-auto pb-4 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-black/20 [&::-webkit-scrollbar-thumb]:bg-liquid-yellow/50 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-liquid-yellow/70">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
+                {/* Original 3 packages */}
+                {[
+                  {
+                    credits: 600,
+                    name: "Pacote Iniciante",
+                    description: "Perfeito para começar",
+                    bonus: 50,
+                    originalPrice: "R$ 29,90",
+                    price: "R$ 19,90"
+                  },
+                  {
+                    credits: 1200,
+                    name: "Pacote Básico",
+                    description: "Para jogadores casuais",
+                    bonus: 150,
+                    originalPrice: "R$ 49,90",
+                    price: "R$ 39,90"
+                  },
+                  {
+                    credits: 2400,
+                    name: "Pacote Pro",
+                    description: "O favorito da comunidade",
+                    bonus: 400,
+                    originalPrice: "R$ 89,90",
+                    price: "R$ 69,90",
+                    featured: true
+                  },
+                  {
+                    credits: 3600,
+                    name: "Pacote Avançado",
+                    description: "Para jogadores dedicados",
+                    bonus: 800,
+                    originalPrice: "R$ 129,90",
+                    price: "R$ 99,90"
+                  },
+                  {
+                    credits: 4800,
+                    name: "Pacote Elite",
+                    description: "Para jogadores exigentes",
+                    bonus: 1200,
+                    originalPrice: "R$ 159,90",
+                    price: "R$ 129,90"
+                  },
+                  {
+                    credits: 6000,
+                    name: "Pacote Master",
+                    description: "Experiência completa",
+                    bonus: 1800,
+                    originalPrice: "R$ 199,90",
+                    price: "R$ 169,90"
+                  },
+                  {
+                    credits: 8400,
+                    name: "Pacote Ultimate",
+                    description: "Para os mais exigentes",
+                    bonus: 2400,
+                    originalPrice: "R$ 259,90",
+                    price: "R$ 219,90"
+                  },
+                  {
+                    credits: 12000,
+                    name: "Pacote Legend",
+                    description: "Domine o jogo",
+                    bonus: 3600,
+                    originalPrice: "R$ 349,90",
+                    price: "R$ 299,90"
+                  },
+                  {
+                    credits: 16000,
+                    name: "Pacote Champion",
+                    description: "Para verdadeiros campeões",
+                    bonus: 5000,
+                    originalPrice: "R$ 449,90",
+                    price: "R$ 399,90"
+                  }
+                ].map((pack, index) => (
+                  <div key={index} className="relative flex flex-col gap-4 p-4 w-[300px] rounded-xl bg-[#12131A] overflow-hidden group">
+                    {/* Animated border effect */}
+                    <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/50 to-white/40 rounded-xl overflow-hidden">
+                      <div className="absolute inset-0 animate-[spin_8s_linear_infinite] bg-gradient-to-t from-transparent via-liquid-yellow to-transparent"></div>
+                    </div>
+                
+                    {/* Featured badge */}
+                    {pack.featured && (
+                      <div className="absolute top-0 right-0 bg-liquid-yellow/80 text-liquid-navy text-xs font-bold py-1 px-3 rounded-bl-lg">
+                        MAIS VENDIDO
+                      </div>
+                    )}
+                
+                    {/* Card content */}
+                    <div className="flex flex-col gap-4">
+                      {/* Title section */}
+                      <div className="flex flex-col">
+                        <h3 className="text-lg font-bold text-white">{pack.name}</h3>
+                        <p className="text-sm text-gray-400">{pack.description}</p>
+                      </div>
+                
+                      <hr className="border-gray-700/50" />
+                
+                      {/* Features list */}
+                      <ul className="flex flex-col gap-2">
+                        <li className="flex items-center gap-2">
+                          <span className="flex items-center justify-center w-4 h-4 bg-liquid-yellow rounded-full">
+                            <svg className="w-2.5 h-2.5 text-liquid-navy" viewBox="0 0 16 16" fill="currentColor">
+                              <path d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                            </svg>
+                          </span>
+                          <span className="text-sm text-gray-300">{pack.credits} Créditos Base</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="flex items-center justify-center w-4 h-4 bg-liquid-yellow rounded-full">
+                            <svg className="w-2.5 h-2.5 text-liquid-navy" viewBox="0 0 16 16" fill="currentColor">
+                              <path d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                            </svg>
+                          </span>
+                          <span className="text-sm text-gray-300">+{pack.bonus} Créditos Bônus</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="flex items-center justify-center w-4 h-4 bg-liquid-yellow rounded-full">
+                            <svg className="w-2.5 h-2.5 text-liquid-navy" viewBox="0 0 16 16" fill="currentColor">
+                              <path d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" />
+                            </svg>
+                          </span>
+                          <span className="text-sm text-gray-300">Entrega Instantânea</span>
+                        </li>
+                      </ul>
+                
+                      {/* Price and CTA */}
+                      <div className="mt-auto">
+                        <div className="flex justify-between items-end mb-4">
+                          <div>
+                            {pack.originalPrice && (
+                              <span className="text-gray-400 line-through text-sm">{pack.originalPrice}</span>
+                            )}
+                            <p className="text-xl font-bold text-white">{pack.price}</p>
+                          </div>
+                        </div>
+                        <button className="w-full bg-gradient-to-r from-liquid-yellow to-yellow-600 text-liquid-navy font-bold py-2 rounded-lg hover:shadow-lg hover:shadow-liquid-yellow/20 transition-all">
+                          Comprar Agora
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Scroll indicators */}
+            <div className="absolute left-0 bottom-0 w-full h-1 bg-liquid-yellow/10 rounded-full">
+              <div className="h-full w-1/3 bg-gradient-to-r from-liquid-yellow to-yellow-600 rounded-full"></div>
+            </div>
+          </div>
+        </section>
+
 
         {/* Seção de Cards de Serviços Premium R6 - Com borda em vez de fundo */}
         <section className="relative py-24 overflow-hidden mb-20">
@@ -1117,7 +1297,7 @@ const ProfileHero: React.FC = () => {
                 <div className="absolute inset-0" style={{
                   background: 'linear-gradient(135deg, rgba(0,200,255,0.05) 0%, transparent 100%)',
                 }}></div>
-                
+
                 {/* Linhas de relevo */}
                 <div className="absolute inset-0 overflow-hidden opacity-20">
                   <div className="h-px w-full bg-gradient-to-r from-transparent via-liquid-teal/80 to-transparent"></div>
@@ -1125,16 +1305,16 @@ const ProfileHero: React.FC = () => {
                   <div className="absolute left-0 w-px h-full bg-gradient-to-b from-transparent via-liquid-teal/30 to-transparent"></div>
                   <div className="absolute right-0 w-px h-full bg-gradient-to-b from-transparent via-liquid-teal/30 to-transparent"></div>
                 </div>
-                
+
                 {/* Imagem de fundo do card */}
                 <div className="absolute inset-0 opacity-5">
-                  <img 
-                    src="/images/services/elo-boost.jpg" 
-                    alt="Elo Boost" 
+                  <img
+                    src="/images/services/elo-boost.jpg"
+                    alt="Elo Boost"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                
+
                 {/* Conteúdo do Card */}
                 <div className="relative z-10">
                   {/* Header com badge */}
@@ -1143,7 +1323,7 @@ const ProfileHero: React.FC = () => {
                       <div className="flex items-center">
                         <div className="w-12 h-12 bg-gradient-to-br from-liquid-teal to-liquid-blue rounded-lg flex items-center justify-center mr-4 shadow-lg transform transition-transform group-hover:scale-110">
                           <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </div>
                         <div>
@@ -1159,14 +1339,14 @@ const ProfileHero: React.FC = () => {
                       TOP VENDAS
                     </div>
                   </div>
-                  
+
                   {/* Body */}
                   <div className="p-4 space-y-4">
                     <div className="space-y-3">
                       <div className="flex items-center">
                         <div className="w-5 h-5 bg-liquid-teal/10 rounded-full flex items-center justify-center mr-2 border border-liquid-teal/30">
                           <svg className="w-3 h-3 text-liquid-teal" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </div>
                         <span className="text-gray-300 text-sm">Jogadores profissionais</span>
@@ -1174,7 +1354,7 @@ const ProfileHero: React.FC = () => {
                       <div className="flex items-center">
                         <div className="w-5 h-5 bg-liquid-teal/10 rounded-full flex items-center justify-center mr-2 border border-liquid-teal/30">
                           <svg className="w-3 h-3 text-liquid-teal" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </div>
                         <span className="text-gray-300 text-sm">Subida rápida e garantida</span>
@@ -1182,13 +1362,13 @@ const ProfileHero: React.FC = () => {
                       <div className="flex items-center">
                         <div className="w-5 h-5 bg-liquid-teal/10 rounded-full flex items-center justify-center mr-2 border border-liquid-teal/30">
                           <svg className="w-3 h-3 text-liquid-teal" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </div>
                         <span className="text-gray-300 text-sm">Todos os ranks disponíveis</span>
                       </div>
                     </div>
-                    
+
                     {/* Progress Bar */}
                     <div className="w-full mt-1 mb-1">
                       <div className="flex justify-between items-center mb-1">
@@ -1199,7 +1379,7 @@ const ProfileHero: React.FC = () => {
                         <div className="h-full bg-gradient-to-r from-liquid-teal to-liquid-blue rounded-full" style={{ width: '80%' }}></div>
                       </div>
                     </div>
-                    
+
                     {/* Preço e CTA */}
                     <div className="mt-2 pt-2 border-t border-liquid-teal/20 flex items-center justify-between">
                       <div>
@@ -1209,20 +1389,20 @@ const ProfileHero: React.FC = () => {
                       <button className="bg-gradient-to-r from-liquid-teal to-liquid-blue hover:from-liquid-teal/80 hover:to-liquid-blue/80 text-white py-2 px-4 rounded-md transition-all flex items-center shadow-lg">
                         <span>Contratar</span>
                         <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </button>
                     </div>
                   </div>
                 </div>
               </div>
-              
+
               {/* Card Venda de Contas - Versão com relevo */}
               <div className="backdrop-blur-sm border border-liquid-blue/30 rounded-lg overflow-hidden relative group transition-all duration-300 transform hover:-translate-y-1 hover:border-liquid-blue/60 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),_0_8px_16px_rgba(0,0,0,0.4)]">
                 <div className="absolute inset-0" style={{
                   background: 'linear-gradient(135deg, rgba(0,100,255,0.05) 0%, transparent 100%)',
                 }}></div>
-                
+
                 {/* Linhas de relevo */}
                 <div className="absolute inset-0 overflow-hidden opacity-20">
                   <div className="h-px w-full bg-gradient-to-r from-transparent via-liquid-blue/80 to-transparent"></div>
@@ -1230,16 +1410,16 @@ const ProfileHero: React.FC = () => {
                   <div className="absolute left-0 w-px h-full bg-gradient-to-b from-transparent via-liquid-blue/30 to-transparent"></div>
                   <div className="absolute right-0 w-px h-full bg-gradient-to-b from-transparent via-liquid-blue/30 to-transparent"></div>
                 </div>
-                
+
                 {/* Imagem de fundo do card */}
                 <div className="absolute inset-0 opacity-5">
-                  <img 
-                    src="/images/services/premium-accounts.jpg" 
-                    alt="Contas Premium" 
+                  <img
+                    src="/images/services/premium-accounts.jpg"
+                    alt="Contas Premium"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                
+
                 {/* Conteúdo do Card */}
                 <div className="relative z-10">
                   {/* Header com badge */}
@@ -1248,8 +1428,8 @@ const ProfileHero: React.FC = () => {
                       <div className="flex items-center">
                         <div className="w-12 h-12 bg-gradient-to-br from-liquid-blue to-blue-600 rounded-lg flex items-center justify-center mr-4 shadow-lg transform transition-transform group-hover:scale-110">
                           <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z" stroke="white" strokeWidth="2"/>
-                            <path d="M3 21C3 17.134 7.13401 14 12 14C16.866 14 21 17.134 21 21" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                            <path d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z" stroke="white" strokeWidth="2" />
+                            <path d="M3 21C3 17.134 7.13401 14 12 14C16.866 14 21 17.134 21 21" stroke="white" strokeWidth="2" strokeLinecap="round" />
                           </svg>
                         </div>
                         <div>
@@ -1266,14 +1446,14 @@ const ProfileHero: React.FC = () => {
                       LIMITADO
                     </div>
                   </div>
-                  
+
                   {/* Body */}
                   <div className="p-4 space-y-4">
                     <div className="space-y-3">
                       <div className="flex items-center">
                         <div className="w-5 h-5 bg-liquid-blue/10 rounded-full flex items-center justify-center mr-2 border border-liquid-blue/30">
                           <svg className="w-3 h-3 text-liquid-blue" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </div>
                         <span className="text-gray-300 text-sm">Contas com skins raras</span>
@@ -1281,7 +1461,7 @@ const ProfileHero: React.FC = () => {
                       <div className="flex items-center">
                         <div className="w-5 h-5 bg-liquid-blue/10 rounded-full flex items-center justify-center mr-2 border border-liquid-blue/30">
                           <svg className="w-3 h-3 text-liquid-blue" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </div>
                         <span className="text-gray-300 text-sm">Stats impressionantes</span>
@@ -1289,13 +1469,13 @@ const ProfileHero: React.FC = () => {
                       <div className="flex items-center">
                         <div className="w-5 h-5 bg-liquid-blue/10 rounded-full flex items-center justify-center mr-2 border border-liquid-blue/30">
                           <svg className="w-3 h-3 text-liquid-blue" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </div>
                         <span className="text-gray-300 text-sm">Transferência garantida</span>
                       </div>
                     </div>
-                    
+
                     {/* Progress Bar */}
                     <div className="w-full mt-1 mb-1">
                       <div className="flex justify-between items-center mb-1">
@@ -1306,7 +1486,7 @@ const ProfileHero: React.FC = () => {
                         <div className="h-full bg-gradient-to-r from-liquid-blue to-blue-600 rounded-full" style={{ width: '35%' }}></div>
                       </div>
                     </div>
-                    
+
                     {/* Preço e CTA */}
                     <div className="mt-2 pt-2 border-t border-liquid-blue/20 flex items-center justify-between">
                       <div>
@@ -1316,20 +1496,20 @@ const ProfileHero: React.FC = () => {
                       <button className="bg-gradient-to-r from-liquid-blue to-blue-600 hover:from-liquid-blue/80 hover:to-blue-600/80 text-white py-2 px-4 rounded-md transition-all flex items-center shadow-lg">
                         <span>Ver Catálogo</span>
                         <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </button>
                     </div>
                   </div>
                 </div>
               </div>
-              
+
               {/* Card Créditos R6 - Versão com relevo */}
               <div className="backdrop-blur-sm border border-liquid-yellow/30 rounded-lg overflow-hidden relative group transition-all duration-300 transform hover:-translate-y-1 hover:border-liquid-yellow/60 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),_0_8px_16px_rgba(0,0,0,0.4)]">
                 <div className="absolute inset-0" style={{
                   background: 'linear-gradient(135deg, rgba(255,215,0,0.05) 0%, transparent 100%)',
                 }}></div>
-                
+
                 {/* Linhas de relevo */}
                 <div className="absolute inset-0 overflow-hidden opacity-20">
                   <div className="h-px w-full bg-gradient-to-r from-transparent via-liquid-yellow/80 to-transparent"></div>
@@ -1337,16 +1517,16 @@ const ProfileHero: React.FC = () => {
                   <div className="absolute left-0 w-px h-full bg-gradient-to-b from-transparent via-liquid-yellow/30 to-transparent"></div>
                   <div className="absolute right-0 w-px h-full bg-gradient-to-b from-transparent via-liquid-yellow/30 to-transparent"></div>
                 </div>
-                
+
                 {/* Imagem de fundo do card */}
                 <div className="absolute inset-0 opacity-5">
-                  <img 
-                    src="/images/services/r6-credits.jpg" 
-                    alt="Créditos R6" 
+                  <img
+                    src="/images/services/r6-credits.jpg"
+                    alt="Créditos R6"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                
+
                 {/* Conteúdo do Card */}
                 <div className="relative z-10">
                   {/* Header com badge */}
@@ -1355,7 +1535,7 @@ const ProfileHero: React.FC = () => {
                       <div className="flex items-center">
                         <div className="w-12 h-12 bg-gradient-to-br from-liquid-yellow to-yellow-600 rounded-lg flex items-center justify-center mr-4 shadow-lg transform transition-transform group-hover:scale-110">
                           <svg className="w-6 h-6 text-liquid-navy" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L14.85 8.3L22 9.3L17 14.14L18.18 21L12 17.77L5.82 21L7 14.14L2 9.3L9.15 8.3L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M12 2L14.85 8.3L22 9.3L17 14.14L18.18 21L12 17.77L5.82 21L7 14.14L2 9.3L9.15 8.3L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </div>
                         <div>
@@ -1371,14 +1551,14 @@ const ProfileHero: React.FC = () => {
                       15% OFF
                     </div>
                   </div>
-                  
+
                   {/* Body */}
                   <div className="p-4 space-y-4">
                     <div className="space-y-3">
                       <div className="flex items-center">
                         <div className="w-5 h-5 bg-liquid-yellow/10 rounded-full flex items-center justify-center mr-2 border border-liquid-yellow/30">
                           <svg className="w-3 h-3 text-liquid-yellow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </div>
                         <span className="text-gray-300 text-sm">Preços abaixo do mercado</span>
@@ -1386,7 +1566,7 @@ const ProfileHero: React.FC = () => {
                       <div className="flex items-center">
                         <div className="w-5 h-5 bg-liquid-yellow/10 rounded-full flex items-center justify-center mr-2 border border-liquid-yellow/30">
                           <svg className="w-3 h-3 text-liquid-yellow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </div>
                         <span className="text-gray-300 text-sm">100% de segurança</span>
@@ -1394,13 +1574,13 @@ const ProfileHero: React.FC = () => {
                       <div className="flex items-center">
                         <div className="w-5 h-5 bg-liquid-yellow/10 rounded-full flex items-center justify-center mr-2 border border-liquid-yellow/30">
                           <svg className="w-3 h-3 text-liquid-yellow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </div>
                         <span className="text-gray-300 text-sm">Vários métodos de pagamento</span>
                       </div>
                     </div>
-                    
+
                     {/* Progress Bar */}
                     <div className="w-full mt-1 mb-1">
                       <div className="flex justify-between items-center mb-1">
@@ -1411,7 +1591,7 @@ const ProfileHero: React.FC = () => {
                         <div className="h-full bg-gradient-to-r from-liquid-yellow to-yellow-600 rounded-full" style={{ width: '100%' }}></div>
                       </div>
                     </div>
-                    
+
                     {/* Preço e CTA */}
                     <div className="mt-2 pt-2 border-t border-liquid-yellow/20 flex items-center justify-between">
                       <div>
@@ -1421,7 +1601,7 @@ const ProfileHero: React.FC = () => {
                       <button className="bg-gradient-to-r from-liquid-yellow to-yellow-600 hover:from-liquid-yellow/80 hover:to-yellow-600/80 text-liquid-navy font-bold py-2 px-4 rounded-md transition-all flex items-center shadow-lg">
                         <span>Comprar</span>
                         <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </button>
                     </div>
@@ -1431,8 +1611,8 @@ const ProfileHero: React.FC = () => {
             </div>
           </div>
         </section>
-                
-        
+
+
         {/* Seção de Fan Stories */}
         <div className="w-full mb-12">
           <div className="text-center mb-8">

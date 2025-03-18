@@ -59,7 +59,7 @@ const Community: React.FC = () => {
         <section className="bg-liquid-navy text-white py-20">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Rainbow Six:<br />Seu Arsenal Começa Aqui
+             Seu Arsenal Começa Aqui
             </h1>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
               A conta ideal para arrasar está a um clique. Compre contas personalizadas, troque as que não usa, 
