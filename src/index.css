@@ -3,6 +3,29 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Quantico:wght@400;700&display=swap');
+
+@layer components {
+  .title-font-alt {
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(183, 228, 248, 0.3);
+  }
+  
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 3s ease infinite;
+  }
+  
+  @keyframes gradient-x {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+}
 
 body {
   margin: 0;

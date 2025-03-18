@@ -601,7 +601,31 @@ const ProfileHero: React.FC = () => {
       {/* Container principal do conteúdo */}
       <div className="container mx-auto px-4 py-12 relative z-10 flex flex-col items-center">
         {/* Seção Hero com Perfil */}
-        <div className="w-full mb-16 text-center">
+        <div className="w-full mb-16 text-center relative">
+          {/* Efeito de neon ao fundo */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-b from-liquid-teal/20 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-t from-liquid-blue/20 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-liquid-teal/10 via-liquid-blue/10 to-liquid-teal/10 rounded-full blur-3xl animate-pulse"></div>
+            
+            {/* Linhas de escaneamento */}
+            <div className="absolute inset-0 overflow-hidden" style={{ transform: 'translateZ(20px)' }}>
+              {/* Linha de escaneamento principal */}
+              <div
+                className="absolute left-0 right-0 h-[2px] bg-cyan-400/40 blur-[1px]"
+                style={{
+                  animation: 'scanner 4s linear infinite',
+                  boxShadow: '0 0 10px 5px rgba(0, 200, 255, 0.15)'
+                }}
+              ></div>
+              
+              {/* Grade holográfica */}
+              <div className="absolute inset-0 opacity-10" style={{
+                backgroundImage: 'linear-gradient(0deg, transparent 90%, rgba(0, 200, 255, 0.2) 100%), linear-gradient(90deg, transparent 90%, rgba(0, 200, 255, 0.2) 100%)',
+                backgroundSize: '40px 40px'
+              }}></div>
+            </div>
+          </div>
           <div className="inline-block bg-gradient-to-r from-liquid-teal/20 to-liquid-blue/20 border border-liquid-teal/30 text-white py-1 px-4 rounded-md mb-6">
             <span className="text-sm font-medium">Bem-vindo à nossa plataforma</span>
           </div>
@@ -925,9 +949,12 @@ const ProfileHero: React.FC = () => {
           
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
-              <h2 className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-liquid-blue to-blue-400 text-3xl font-bold">CONTAS EM DESTAQUE</h2>
-              <div className="h-1 w-40 bg-gradient-to-r from-liquid-blue to-blue-400 rounded mx-auto mt-2"></div>
-              <p className="text-gray-300 mt-2">Veja nossa seleção de contas premium para Rainbow Six</p>
+              <div className="inline-block relative">
+                <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-liquid-teal to-liquid-blue animate-gradient-x title-font-alt uppercase tracking-wider">Contas em Destaque</h2>
+                <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-liquid-teal/0 via-liquid-teal to-liquid-teal/0 rounded-full"></div>
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-liquid-teal to-liquid-blue rounded-full"></div>
+              </div>
+              <p className="text-gray-300 mt-4 text-lg">Veja nossa seleção de contas premium para Rainbow Six</p>
             </div>
             
             {/* Controles do carrossel e indicador */}
@@ -1065,21 +1092,22 @@ const ProfileHero: React.FC = () => {
         </section>
 
         {/* Seção de Cards de Serviços Premium R6 - Com borda em vez de fundo */}
-        <section className="py-12 relative">
-          {/* Borda decorativa ao redor da seção */}
-          <div className="absolute inset-0 -m-1 p-1 rounded-xl pointer-events-none">
-            <div className="absolute inset-0 rounded-xl border border-liquid-teal/30 opacity-70"></div>
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-liquid-teal/80 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-liquid-teal/80 to-transparent"></div>
-            <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-liquid-teal/80 to-transparent"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-liquid-teal/80 to-transparent"></div>
+        <section className="relative py-24 overflow-hidden mb-20">
+          {/* Efeito de neon */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-b from-liquid-teal/20 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-t from-liquid-blue/20 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-liquid-teal/10 via-liquid-blue/10 to-liquid-teal/10 rounded-full blur-3xl animate-pulse"></div>
           </div>
-          
-          <div className="container mx-auto px-4">
+
+          <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-10">
-              <h2 className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-liquid-teal to-liquid-blue text-3xl font-bold">SERVIÇOS PREMIUM R6</h2>
-              <div className="h-1 w-40 bg-gradient-to-r from-liquid-teal to-liquid-blue rounded mx-auto mt-2"></div>
-              <p className="text-gray-300 mt-2">Aumente seu desempenho com nossos serviços exclusivos</p>
+              <div className="inline-block relative">
+                <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-liquid-teal to-liquid-blue animate-gradient-x title-font-alt uppercase tracking-wider">Serviços Premium R6</h2>
+                <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-liquid-teal/0 via-liquid-teal to-liquid-teal/0 rounded-full"></div>
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-liquid-teal to-liquid-blue rounded-full"></div>
+              </div>
+              <p className="text-gray-300 mt-4 text-lg">Aumente seu desempenho com nossos serviços exclusivos</p>
             </div>
 
             {/* Cards de serviços */}
@@ -1679,4 +1707,4 @@ const ProfileHero: React.FC = () => {
   );
 };
 
-export default ProfileHero; 
+export default ProfileHero;
