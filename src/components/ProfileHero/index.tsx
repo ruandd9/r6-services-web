@@ -626,7 +626,7 @@ const ProfileHero: React.FC = () => {
               }}></div>
             </div>
           </div>
-          <div className="inline-block bg-gradient-to-r from-liquid-teal/20 to-liquid-blue/20 border border-liquid-teal/30 text-white py-1 px-4 rounded-md mb-6">
+          <div className="inline-block bg-gradient-to-r from-liquid-teal/20 to-liquid-blue/20 border border-liquid-teal/30 text-white py-1 px-4 rounded-md mb-10 ">
             <span className="text-sm font-medium">Bem-vindo à nossa plataforma</span>
           </div>
 
@@ -766,7 +766,7 @@ const ProfileHero: React.FC = () => {
                 <div className="md:w-1/2 space-y-6 text-center md:text-left">
                   <div className="inline-flex items-center bg-gradient-to-r from-liquid-teal/20 to-liquid-blue/20 rounded-full px-4 py-1 border border-liquid-teal/30">
                     <div className="w-2 h-2 rounded-full bg-liquid-teal animate-pulse mr-2"></div>
-                    <span className="text-xs font-medium text-liquid-teal uppercase tracking-wider">Treinamento Premium</span>
+                    <span className="text-xs font-medium text-liquid-teal uppercase tracking-wider">Serviços Premium</span>
                   </div>
 
                   <h2 className="text-3xl md:text-4xl font-bold text-white">
@@ -1093,9 +1093,9 @@ const ProfileHero: React.FC = () => {
 
 
         {/* R6 Credits Packages Section */}
-        <section className="w-full max-w-6xl mx-auto my-24 relative overflow-hidden">
+        <section className="w-full max-w-6xl mx-auto my-24 relative overflow-hidden p-2">
           {/* Efeito de neon */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-lg ">
             {/* Camada de fundo com gradiente suave */}
             <div className="absolute inset-0 bg-gradient-to-tl from-gray-900 via-indigo-950 to-gray-900 opacity-90"></div>
 
@@ -1123,7 +1123,7 @@ const ProfileHero: React.FC = () => {
             </h2>
           </div>
 
-          <div className="relative z-10">
+          <div className="relative z-10 p-5">
             {/* Decorative elements */}
             <div className="absolute inset-0 bg-gradient-to-b from-liquid-yellow/5 to-transparent rounded-3xl"></div>
             <div className="absolute -top-5 -right-5 w-24 h-24 bg-liquid-yellow/10 rounded-full blur-2xl"></div>
@@ -1284,9 +1284,6 @@ const ProfileHero: React.FC = () => {
             </div>
           </div>
         </section>
-
-
-        {/* Seção de Cards de Serviços Premium R6 - Com borda em vez de fundo  ... */}
 
 
 
