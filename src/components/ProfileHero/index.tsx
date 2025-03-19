@@ -24,6 +24,11 @@ const ProfileHero: React.FC = () => {
 
   const navigate = useNavigate();
 
+  // Estados para o modal de detalhes da conta
+  const [selectedAccount, setSelectedAccount] = useState<AccountData | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const modalRef = useRef<HTMLDivElement>(null);
+
   const closeNotification = (notificationId: string) => {
     setVisibleNotifications(prev => ({
       ...prev,
@@ -142,6 +147,7 @@ const ProfileHero: React.FC = () => {
     operators: string;
     skins: string;
     stats: string;
+    description?: string; // Adicionando campo de descrição
     tags: {
       text: string;
       color: string;
@@ -169,6 +175,7 @@ const ProfileHero: React.FC = () => {
       operators: "Operadores: 42/46 desbloqueados",
       skins: "36 skins Black Ice",
       stats: "K/D: 1.8 | W/L: 64%",
+      description: "Conta premium com diversas skins raras e operadores desbloqueados. Ideal para jogadores que valorizam cosméticos exclusivos e estatísticas competitivas.",
       tags: [
         { text: "Black Ice", color: "bg-blue-500/20 text-blue-400" },
         { text: "Elite Skins", color: "bg-purple-500/20 text-purple-400" },
@@ -193,6 +200,7 @@ const ProfileHero: React.FC = () => {
       operators: "Operadores: 46/46 desbloqueados",
       skins: "14 skins Elite + Pro League set",
       stats: "K/D: 2.1 | W/L: 72%",
+      description: "Conta do mais alto nível competitivo. Todos os operadores desbloqueados e conjuntos Pro League exclusivos. Estatísticas impressionantes.",
       tags: [
         { text: "Pro League", color: "bg-yellow-500/20 text-yellow-400" },
         { text: "Alpha Pack", color: "bg-green-500/20 text-green-400" },
@@ -218,6 +226,7 @@ const ProfileHero: React.FC = () => {
       operators: "Operadores: 38/46 desbloqueados",
       skins: "18 skins raras da Y1-Y3",
       stats: "K/D: 1.4 | W/L: 58%",
+      description: "Conta original com itens das primeiras temporadas do jogo. Possui diversas skins exclusivas que não estão mais disponíveis para compra.",
       tags: [
         { text: "OG Player", color: "bg-blue-500/20 text-blue-400" },
         { text: "Seasonal", color: "bg-purple-500/20 text-purple-400" },
@@ -241,6 +250,7 @@ const ProfileHero: React.FC = () => {
       operators: "Operadores: 32/46 desbloqueados",
       skins: "10 skins raras + 3 Elite",
       stats: "K/D: 1.2 | W/L: 53%",
+      description: "Opção econômica para jogadores que buscam iniciar com uma conta de nível intermediário. Possui operadores suficientes para diversas estratégias.",
       tags: [
         { text: "Econômica", color: "bg-green-500/20 text-green-400" },
         { text: "Iniciante+", color: "bg-blue-500/20 text-blue-400" },
@@ -266,6 +276,7 @@ const ProfileHero: React.FC = () => {
       operators: "Operadores: 46/46 desbloqueados",
       skins: "Todas as skins Pro League + 25 Elite",
       stats: "K/D: 2.3 | W/L: 78%",
+      description: "Conta exclusiva de ex-jogador profissional com estatísticas impressionantes e coleção completa de itens. Inclui skins extremamente raras e charms exclusivos de eventos.",
       tags: [
         { text: "Ex-Pro", color: "bg-red-500/20 text-red-400" },
         { text: "Complete", color: "bg-green-500/20 text-green-400" },
@@ -291,6 +302,7 @@ const ProfileHero: React.FC = () => {
       operators: "Operadores: 25/46 desbloqueados",
       skins: "8 skins raras + Battlepass Y7",
       stats: "K/D: 1.0 | W/L: 49%",
+      description: "Conta ideal para iniciantes, com operadores básicos desbloqueados e alguns itens cosméticos. Perfeita para quem está começando no jogo sem partir do zero.",
       tags: [
         { text: "Iniciante", color: "bg-blue-500/20 text-blue-400" },
         { text: "Econômica", color: "bg-green-500/20 text-green-400" },
@@ -412,6 +424,29 @@ const ProfileHero: React.FC = () => {
 
   const handleExplorarCatalogo = () => {
     navigate('/catalogo-contas');
+  };
+
+  // Efeito para gerenciar o clique fora do modal para fechar
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        setIsModalOpen(false);
+      }
+    };
+
+    if (isModalOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isModalOpen]);
+
+  // Função para abrir o modal com os detalhes da conta
+  const handleAccountClick = (account: AccountData) => {
+    setSelectedAccount(account);
+    setIsModalOpen(true);
   };
 
   return (
@@ -951,7 +986,7 @@ const ProfileHero: React.FC = () => {
         </div>
 
         {/* Mini Catálogo de Contas - Carrossel de contas à venda */}
-        <section className="py-16 relative overflow-hidden my-12">
+        <section className="p-10 rounded-3xl relative overflow-hidden my-12">
           {/* Background semelhante ao da seção de créditos R6 */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-tl from-gray-900 via-indigo-950 to-gray-900 opacity-90"></div>
@@ -1158,7 +1193,8 @@ const ProfileHero: React.FC = () => {
                   {currentAccounts.map((account) => (
                     <div
                       key={account.id}
-                      className="backdrop-blur-sm border border-liquid-blue/40 rounded-lg overflow-hidden relative group transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(0,180,255,0.3)] shadow-[inset_0_1px_1px_rgba(0,180,255,0.1),_0_5px_15px_rgba(0,0,0,0.4)]"
+                      onClick={() => handleAccountClick(account)}
+                      className="backdrop-blur-sm border border-liquid-blue/40 rounded-lg overflow-hidden relative group transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(0,180,255,0.3)] shadow-[inset_0_1px_1px_rgba(0,180,255,0.1),_0_5px_15px_rgba(0,0,0,0.4)] cursor-pointer"
                     >
                       {/* Efeito de fundo com gradiente */}
                       <div className="absolute inset-0 bg-gradient-to-b from-liquid-blue/5 to-transparent opacity-70"></div>
@@ -1253,7 +1289,13 @@ const ProfileHero: React.FC = () => {
                         </div>
 
                         {/* Botão atualizado com gradiente e efeito de brilho */}
-                        <button className="w-full bg-gradient-to-r from-liquid-blue/80 to-liquid-teal/80 hover:from-liquid-blue hover:to-liquid-teal text-white py-2.5 rounded-md transition-all flex items-center justify-center mt-2 shadow-[0_0_10px_rgba(0,150,255,0.2)] group-hover:shadow-[0_0_15px_rgba(0,180,255,0.3)]">
+                        <button 
+                          onClick={(e) => {
+                            e.stopPropagation(); // Evita que o evento de clique se propague para o card
+                            handleAccountClick(account);
+                          }}
+                          className="w-full bg-gradient-to-r from-liquid-blue/80 to-liquid-teal/80 hover:from-liquid-blue hover:to-liquid-teal text-white py-2.5 rounded-md transition-all flex items-center justify-center mt-2 shadow-[0_0_10px_rgba(0,150,255,0.2)] group-hover:shadow-[0_0_15px_rgba(0,180,255,0.3)]"
+                        >
                           <span>Ver detalhes</span>
                           <svg
                             className="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform"
@@ -1295,7 +1337,7 @@ const ProfileHero: React.FC = () => {
 
 
         {/* R6 Credits Packages Section */}
-        <section className="w-full my-24 relative overflow-hidden p-2">
+        <section className="w-full my-24 relative overflow-hidden p-2 rounded-3xl">
           {/* Efeito de neon */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             {/* Camada de fundo com gradiente suave */}
@@ -1758,6 +1800,168 @@ const ProfileHero: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal de detalhes da conta */}
+      {isModalOpen && selectedAccount && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div 
+            ref={modalRef}
+            className="bg-gradient-to-b from-gray-900 to-black border border-liquid-blue/30 rounded-lg w-full max-w-4xl max-h-[90vh] overflow-y-auto"
+          >
+            <div className="p-6">
+              {/* Botão de fechar */}
+              <div className="flex justify-end mb-4">
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="bg-black/40 text-white p-2 rounded-full hover:bg-black/60 transition-colors"
+                >
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </div>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {/* Imagem e informações */}
+                <div className="space-y-4">
+                  <div className="relative rounded-lg overflow-hidden border border-liquid-blue/30">
+                    <img
+                      src={selectedAccount.image}
+                      alt={selectedAccount.title}
+                      className="w-full h-auto object-contain bg-black/30 p-2"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = selectedAccount.placeholderImage;
+                      }}
+                    />
+                    
+                    {/* Tags sobrepostas */}
+                    <div className="absolute top-3 left-3 flex items-center gap-2">
+                      <div
+                        className={`bg-black/40 backdrop-blur-sm border border-liquid-blue/30 px-3 py-1 rounded-lg text-xs font-bold text-white shadow-[0_0_10px_rgba(0,150,255,0.2)] flex items-center gap-1 bg-gradient-to-r ${selectedAccount.rankColor}`}
+                      >
+                        {selectedAccount.rankIcon}
+                        {selectedAccount.rank}
+                      </div>
+                      
+                      {selectedAccount.badgeText && (
+                        <div
+                          className={`${selectedAccount.badgeColor} px-3 py-1 rounded-lg text-xs font-bold shadow-[0_0_10px_rgba(0,150,255,0.2)]`}
+                        >
+                          {selectedAccount.badgeText}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-1.5">
+                      {selectedAccount.tags.map((tag, index) => (
+                        <span
+                          key={index}
+                          className={`text-xs px-2.5 py-1 bg-black/40 backdrop-blur-sm border border-liquid-blue/30 rounded-md ${tag.color} text-white shadow-[0_0_5px_rgba(0,150,255,0.1)]`}
+                        >
+                          {tag.text}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Detalhes e compra */}
+                <div className="space-y-4">
+                  <div>
+                    <h2 className="text-2xl font-bold text-white">{selectedAccount.title}</h2>
+                    <div className="flex items-center space-x-2 mt-1">
+                      <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-liquid-teal to-liquid-blue">
+                        {selectedAccount.price}
+                      </div>
+                      {selectedAccount.originalPrice && (
+                        <div className="text-gray-400 text-sm line-through">{selectedAccount.originalPrice}</div>
+                      )}
+                    </div>
+                  </div>
+                  
+                  <hr className="border-gray-700/50" />
+                  
+                  {/* Descrição da conta */}
+                  {selectedAccount.description && (
+                    <div>
+                      <h3 className="text-white font-bold mb-2">Descrição</h3>
+                      <p className="text-gray-300 text-sm">{selectedAccount.description}</p>
+                    </div>
+                  )}
+                  
+                  <hr className="border-gray-700/50" />
+                  
+                  <div>
+                    <h3 className="text-white font-bold mb-2">Detalhes da Conta</h3>
+                    <div className="space-y-2">
+                      <div className="flex items-center text-sm text-gray-300">
+                        <span className="w-4 h-4 bg-liquid-blue/20 rounded-full flex items-center justify-center mr-2">
+                          <span className="w-2 h-2 bg-liquid-blue rounded-full"></span>
+                        </span>
+                        {selectedAccount.operators}
+                      </div>
+                      <div className="flex items-center text-sm text-gray-300">
+                        <span className="w-4 h-4 bg-liquid-blue/20 rounded-full flex items-center justify-center mr-2">
+                          <span className="w-2 h-2 bg-liquid-blue rounded-full"></span>
+                        </span>
+                        {selectedAccount.skins}
+                      </div>
+                      <div className="flex items-center text-sm text-gray-300">
+                        <span className="w-4 h-4 bg-liquid-blue/20 rounded-full flex items-center justify-center mr-2">
+                          <span className="w-2 h-2 bg-liquid-blue rounded-full"></span>
+                        </span>
+                        {selectedAccount.stats}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <hr className="border-gray-700/50" />
+                  
+                  {/* Botões de ação */}
+                  <div className="space-y-3">
+                    <button 
+                      onClick={handleExplorarCatalogo} 
+                      className="w-full py-3 bg-gradient-to-r from-liquid-teal to-liquid-blue text-white font-bold rounded-lg shadow-lg shadow-liquid-blue/20 hover:shadow-liquid-blue/40 transition-all transform hover:-translate-y-1"
+                    >
+                      Comprar Agora
+                    </button>
+                    <button className="w-full py-3 bg-transparent border border-liquid-teal/50 text-liquid-teal font-bold rounded-lg hover:bg-liquid-teal/10 transition-all">
+                      Adicionar ao Carrinho
+                    </button>
+                    <button 
+                      onClick={handleExplorarCatalogo}
+                      className="w-full py-3 bg-black/30 text-white border border-white/10 rounded-lg hover:bg-black/50 transition-all flex items-center justify-center"
+                    >
+                      <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 8L3 12L7 16M17 8L21 12L17 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      Ver Mais Contas no Catálogo
+                    </button>
+                  </div>
+                  
+                  {/* Informações de garantia */}
+                  <div className="bg-black/20 border border-liquid-blue/20 rounded-lg p-4">
+                    <div className="flex items-center text-liquid-teal mb-2">
+                      <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      <span className="font-bold">Garantia de 30 dias</span>
+                    </div>
+                    <p className="text-gray-400 text-sm">
+                      Todas as contas têm garantia de 30 dias. Se houver qualquer problema, 
+                      faremos a substituição ou devolução do seu dinheiro.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
