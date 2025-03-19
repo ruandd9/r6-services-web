@@ -1004,29 +1004,38 @@ const ProfileHero: React.FC = () => {
               <div className="max-w-[1200px] w-full">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6">
                   {currentAccounts.map((account) => (
-                    <div key={account.id} className="backdrop-blur-sm border border-liquid-blue/30 rounded-lg overflow-hidden relative group transition-all duration-300 transform hover:-translate-y-1 hover:border-liquid-blue/60 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),_0_5px_15px_rgba(0,0,0,0.4)]">
-                      {/* Efeito holográfico */}
-                      <div className="absolute inset-0 opacity-20 overflow-hidden">
-                        <div className="w-full h-full" style={{
-                          background: 'linear-gradient(135deg, rgba(0,150,255,0.05) 0%, transparent 100%)',
-                        }}></div>
-                        <div className="absolute h-[500%] w-[500%] top-[-250%] left-[-250%] bg-gradient-to-r from-transparent via-blue-500/5 to-transparent transform rotate-45 animate-[marquee_20s_linear_infinite]"></div>
-                      </div>
+                    <div
+                      key={account.id}
+                      className="backdrop-blur-sm border border-liquid-blue/40 rounded-lg overflow-hidden relative group transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(0,180,255,0.3)] shadow-[inset_0_1px_1px_rgba(0,180,255,0.1),_0_5px_15px_rgba(0,0,0,0.4)]"
+                    >
+                      {/* Efeito de fundo com gradiente */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-liquid-blue/5 to-transparent opacity-70"></div>
 
-                      {/* Tag Rank */}
-                      <div className={`absolute top-2 left-2 bg-gradient-to-r ${account.rankColor} px-2 py-1 rounded text-xs font-bold text-white shadow-md z-20 flex items-center`}>
+                      {/* Borda de brilho no hover */}
+                      <div className="absolute inset-0 border border-liquid-blue/0 group-hover:border-liquid-blue/60 rounded-lg transition-all duration-300"></div>
+
+                      {/* Linhas de acento */}
+                      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-liquid-blue/70 to-transparent"></div>
+                      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-liquid-blue/40 to-transparent"></div>
+
+                      {/* Tag Rank com novo design */}
+                      <div
+                        className={`absolute top-3 left-3 bg-black/40 backdrop-blur-sm border border-liquid-blue/30 px-3 py-1 rounded-lg text-xs font-bold text-white shadow-[0_0_10px_rgba(0,150,255,0.2)] z-20 flex items-center gap-1`}
+                      >
                         {account.rankIcon}
                         {account.rank}
                       </div>
 
-                      {/* Tag de tipo de conta ou selo de promoção */}
+                      {/* Tag de tipo de conta com novo design */}
                       {account.badgeText && (
-                        <div className={`absolute top-2 right-2 ${account.badgeColor} px-2 py-1 rounded text-xs font-bold z-20 shadow-md`}>
+                        <div
+                          className={`absolute top-3 right-3 bg-black/40 backdrop-blur-sm border border-liquid-blue/30 px-3 py-1 rounded-lg text-xs font-bold z-20 shadow-[0_0_10px_rgba(0,150,255,0.2)] text-white`}
+                        >
                           {account.badgeText}
                         </div>
                       )}
 
-                      {/* Imagem da conta */}
+                      {/* Imagem da conta com overlay melhorado */}
                       <div className="h-80 relative">
                         <img
                           src={account.image}
@@ -1037,22 +1046,28 @@ const ProfileHero: React.FC = () => {
                             target.src = account.placeholderImage;
                           }}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+
+                        {/* Partículas decorativas */}
+                        <div className="absolute bottom-5 right-5 w-1 h-1 bg-liquid-blue rounded-full animate-ping opacity-70"></div>
+                        <div className="absolute bottom-10 right-10 w-1.5 h-1.5 bg-liquid-blue rounded-full animate-ping opacity-50 animation-delay-500"></div>
                       </div>
 
-                      {/* Info da conta */}
-                      <div className="p-4 relative z-10">
-                        <div className="flex justify-between items-start mb-2">
+                      {/* Info da conta com estilo atualizado */}
+                      <div className="p-5 relative z-10 bg-gradient-to-t from-black/80 to-transparent">
+                        <div className="flex justify-between items-start mb-3">
                           <h3 className="text-lg font-bold text-white">{account.title}</h3>
                           <div className="text-right">
                             {account.originalPrice && (
                               <div className="text-gray-400 text-xs line-through">{account.originalPrice}</div>
                             )}
-                            <div className="text-xl font-bold text-white">{account.price}</div>
+                            <div className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-liquid-teal to-liquid-blue">
+                              {account.price}
+                            </div>
                           </div>
                         </div>
 
-                        <div className="space-y-2 mb-3">
+                        <div className="space-y-2 mb-4">
                           <div className="flex items-center text-sm text-gray-300">
                             <span className="w-3 h-3 bg-liquid-blue/20 rounded-full flex items-center justify-center mr-2">
                               <span className="w-1.5 h-1.5 bg-liquid-blue rounded-full"></span>
@@ -1073,18 +1088,34 @@ const ProfileHero: React.FC = () => {
                           </div>
                         </div>
 
-                        {/* Tags */}
-                        <div className="flex flex-wrap gap-1 mb-3">
+                        {/* Tags com novo estilo e cores dinâmicas */}
+                        <div className="flex flex-wrap gap-1.5 mb-4">
                           {account.tags.map((tag, index) => (
-                            <span key={index} className={`text-xs px-2 py-0.5 ${tag.color} rounded`}>{tag.text}</span>
+                            <span
+                              key={index}
+                              className={`text-xs px-2.5 py-1 bg-black/40 backdrop-blur-sm border border-liquid-blue/30 rounded-md ${tag.color} text-white shadow-[0_0_5px_rgba(0,150,255,0.1)]`}
+                            >
+                              {tag.text}
+                            </span>
                           ))}
                         </div>
 
-                        {/* Botão */}
-                        <button className="w-full bg-gradient-to-r from-liquid-blue to-blue-600 hover:from-liquid-blue/90 hover:to-blue-600/90 text-white py-2 rounded-md transition-all flex items-center justify-center mt-2">
+                        {/* Botão atualizado com gradiente e efeito de brilho */}
+                        <button className="w-full bg-gradient-to-r from-liquid-blue/80 to-liquid-teal/80 hover:from-liquid-blue hover:to-liquid-teal text-white py-2.5 rounded-md transition-all flex items-center justify-center mt-2 shadow-[0_0_10px_rgba(0,150,255,0.2)] group-hover:shadow-[0_0_15px_rgba(0,180,255,0.3)]">
                           <span>Ver detalhes</span>
-                          <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          <svg
+                            className="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M5 12H19M19 12L12 5M19 12L12 19"
+                              stroke="white"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
                           </svg>
                         </button>
                       </div>
