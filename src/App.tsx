@@ -4,6 +4,7 @@ import Community from './pages/Community';
 import TestProfileHero from './pages/TestProfileHero';
 import TestGridBackground from './pages/TestGridBackground';
 import CommunityWithGrid from './pages/CommunityWithGrid';
+import AccountCatalog from './pages/AccountCatalog';
 import './App.css';
 
 const App: React.FC = () => {
@@ -15,6 +16,7 @@ const App: React.FC = () => {
         <Route path="/comunidade-grid" element={<CommunityWithGrid />} />
         <Route path="/teste-profile" element={<TestProfileHero />} />
         <Route path="/teste-grid" element={<TestGridBackground />} />
+        <Route path="/catalogo-contas" element={<AccountCatalog />} />
       </Routes>
     </Router>
   );

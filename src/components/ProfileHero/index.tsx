@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ProfileHero: React.FC = () => {
   // Adicionar estado para notificações
@@ -20,6 +21,8 @@ const ProfileHero: React.FC = () => {
   // Estado para controlar a paginação do carrossel
   const [currentPage, setCurrentPage] = useState(0);
   const accountsPerPage = 3; // Número de contas exibidas por página
+
+  const navigate = useNavigate();
 
   const closeNotification = (notificationId: string) => {
     setVisibleNotifications(prev => ({
@@ -407,6 +410,10 @@ const ProfileHero: React.FC = () => {
     );
   };
 
+  const handleExplorarCatalogo = () => {
+    navigate('/catalogo-contas');
+  };
+
   return (
     <div
       ref={mainRef}
@@ -416,12 +423,12 @@ const ProfileHero: React.FC = () => {
       }}
     >
       {/* Notificações fixas no topo esquerdo (alterado de direito para esquerdo) */}
-      <div className="fixed top-4 left-4 z-50 w-80 space-y-3">
+      <div className="fixed top-4 left-4 z-50 w-80 space-y-2">
         {/* Botão para fechar todas as notificações */}
         <div className="flex justify-start mb-1">
           <button
             onClick={closeAllNotifications}
-            className="bg-liquid-navy/80 text-liquid-teal text-xs px-3 py-1.5 rounded-md border border-liquid-teal/30 hover:bg-liquid-teal/10 transition-colors shadow-md flex items-center"
+            className="bg-black/60 text-white text-xs px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/10 transition-colors shadow-lg backdrop-blur-md flex items-center"
           >
             <svg className="w-3.5 h-3.5 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -430,177 +437,168 @@ const ProfileHero: React.FC = () => {
           </button>
         </div>
 
-        {visibleNotifications.notification1 && (
-          <div className="flex items-center justify-between w-full h-14 rounded-lg bg-[#001a45]/95 backdrop-blur-sm px-[10px] border border-liquid-teal/30 shadow-lg shadow-liquid-teal/10 animate-float overflow-hidden" style={{ animationDuration: '4s' }}>
-            <div className="flex gap-2">
-              <div className="text-liquid-teal bg-liquid-teal/10 backdrop-blur-xl p-1.5 rounded-lg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.8"
-                  stroke="currentColor"
-                  className="w-6 h-6 shadow-liquid-teal"
-                >
-                  <path d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21" stroke="currentColor" strokeWidth="2" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-white font-medium">ELO BOOST</p>
-                <p className="text-gray-400 text-xs">Novo cliente elevado para Diamante!</p>
-              </div>
-            </div>
-            <button
-              onClick={() => closeNotification('notification1')}
-              className="text-gray-400 hover:bg-white/10 p-1 rounded-md transition-colors ease-linear"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18 18 6M6 6l12 12"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        )}
+        
 
         {visibleNotifications.notification2 && (
-          <div className="flex items-center justify-between w-full h-14 rounded-lg bg-[#001a45]/95 backdrop-blur-sm px-[10px] border border-liquid-yellow/30 shadow-lg shadow-liquid-yellow/10 animate-float overflow-hidden" style={{ animationDuration: '5s', animationDelay: '1s' }}>
-            <div className="flex gap-2">
-              <div className="text-liquid-yellow bg-liquid-yellow/10 backdrop-blur-xl p-1.5 rounded-lg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.8"
-                  stroke="currentColor"
-                  className="w-6 h-6 shadow-liquid-yellow"
-                >
+          <div className="group relative">
+            {/* Notificação estilo iPhone */}
+            <div className="flex flex-col w-full rounded-2xl bg-black/75 backdrop-blur-xl px-4 pt-3 pb-3 shadow-2xl shadow-black/20 border border-white/10 overflow-hidden animate-float transform transition-transform duration-200 group-hover:scale-[1.02]" style={{ animationDuration: '5s', animationDelay: '0.5s' }}>
+              {/* Cabeçalho da notificação */}
+              <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center">
+                  <div className="flex items-center justify-center w-5 h-5 bg-gradient-to-br from-liquid-yellow to-amber-400 rounded-md mr-2">
+                    <svg className="w-3 h-3 text-black" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z" stroke="currentColor" strokeWidth="2" />
                   <path d="M3 21C3 17.134 7.13401 14 12 14C16.866 14 21 17.134 21 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 </svg>
               </div>
-              <div>
-                <p className="text-white font-medium">CONTAS PREMIUM</p>
-                <p className="text-gray-400 text-xs">5 contas premium disponíveis!</p>
+                  <div className="flex items-center">
+                    <span className="text-white text-xs font-semibold">R6 Marketplace</span>
+                    <span className="mx-1 text-gray-400">•</span>
+                    <span className="text-gray-400 text-[10px]">2 min</span>
               </div>
             </div>
             <button
               onClick={() => closeNotification('notification2')}
-              className="text-gray-400 hover:bg-white/10 p-1 rounded-md transition-colors ease-linear"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18 18 6M6 6l12 12"
-                ></path>
+                  className="text-gray-400 hover:text-white p-0.5 rounded-full transition-colors"
+                >
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
+              </div>
+              
+              {/* Conteúdo da notificação */}
+              <div className="mt-0.5">
+                <h4 className="text-white font-bold text-sm">NOVAS CONTAS PREMIUM</h4>
+                <p className="text-gray-300 text-xs mt-0.5">Adicionamos 5 novas contas premium com Black Ice skins. Confira agora!</p>
+              </div>
+              
+              {/* Barra de tempo */}
+              <div className="w-full mt-3 relative h-[3px] bg-white/10 rounded-full overflow-hidden">
+                <div className="absolute inset-y-0 left-0 bg-liquid-yellow w-2/3 rounded-full transition-all"></div>
+              </div>
+            </div>
+            
+            {/* Reflexo sutil embaixo da notificação */}
+            <div className="w-[95%] h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent mx-auto"></div>
           </div>
         )}
 
         {visibleNotifications.notification3 && (
-          <div className="flex items-center justify-between w-full h-14 rounded-lg bg-[#001a45]/95 backdrop-blur-sm px-[10px] border border-liquid-blue/30 shadow-lg shadow-liquid-blue/10 animate-float overflow-hidden" style={{ animationDuration: '6s', animationDelay: '2s' }}>
-            <div className="flex gap-2">
-              <div className="text-liquid-blue bg-liquid-blue/10 backdrop-blur-xl p-1.5 rounded-lg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.8"
-                  stroke="currentColor"
-                  className="w-6 h-6 shadow-liquid-blue"
-                >
+          <div className="group relative">
+            {/* Notificação estilo iPhone */}
+            <div className="flex flex-col w-full rounded-2xl bg-black/75 backdrop-blur-xl px-4 pt-3 pb-3 shadow-2xl shadow-black/20 border border-white/10 overflow-hidden animate-float transform transition-transform duration-200 group-hover:scale-[1.02]" style={{ animationDuration: '4.5s', animationDelay: '1s' }}>
+              {/* Cabeçalho da notificação */}
+              <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center">
+                  <div className="flex items-center justify-center w-5 h-5 bg-gradient-to-br from-liquid-blue to-blue-400 rounded-md mr-2">
+                    <svg className="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 2L14.85 8.3L22 9.3L17 14.14L18.18 21L12 17.77L5.82 21L7 14.14L2 9.3L9.15 8.3L12 2Z" stroke="currentColor" strokeWidth="2" />
                 </svg>
               </div>
-              <div>
-                <p className="text-white font-medium">CRÉDITOS R6</p>
-                <p className="text-gray-400 text-xs">Desconto de 15% em créditos R6!</p>
+                  <div className="flex items-center">
+                    <span className="text-white text-xs font-semibold">R6 Credits</span>
+                    <span className="mx-1 text-gray-400">•</span>
+                    <span className="text-gray-400 text-[10px]">5 min</span>
               </div>
             </div>
             <button
               onClick={() => closeNotification('notification3')}
-              className="text-gray-400 hover:bg-white/10 p-1 rounded-md transition-colors ease-linear"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18 18 6M6 6l12 12"
-                ></path>
+                  className="text-gray-400 hover:text-white p-0.5 rounded-full transition-colors"
+                >
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
+              </div>
+              
+              {/* Conteúdo da notificação */}
+              <div className="mt-0.5">
+                <h4 className="text-white font-bold text-sm">OFERTA ESPECIAL</h4>
+                <p className="text-gray-300 text-xs mt-0.5">Desconto de 15% em créditos R6! Oferta por tempo limitado. Aproveite agora!</p>
+              </div>
+              
+              {/* Barra de tempo */}
+              <div className="w-full mt-3 relative h-[3px] bg-white/10 rounded-full overflow-hidden">
+                <div className="absolute inset-y-0 left-0 bg-liquid-blue w-1/2 rounded-full transition-all"></div>
+              </div>
+            </div>
+            
+            {/* Reflexo sutil embaixo da notificação */}
+            <div className="w-[95%] h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent mx-auto"></div>
           </div>
         )}
 
-        {visibleNotifications.notification4 && (
-          <div className="flex items-center justify-between w-full h-14 rounded-lg bg-[#001a45]/95 backdrop-blur-sm px-[10px] border border-red-500/30 shadow-lg shadow-red-500/10 animate-float overflow-hidden" style={{ animationDuration: '4.5s', animationDelay: '0.5s' }}>
-            <div className="flex gap-2">
-              <div className="text-red-500 bg-red-500/10 backdrop-blur-xl p-1.5 rounded-lg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.8"
-                  stroke="currentColor"
-                  className="w-6 h-6 shadow-red-500"
-                >
-                  <path d="M12 15V17M12 7V13M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+
+        {/* Nova notificação com imagem */}
+        {visibleNotifications.notification5 && (
+          <div className="group relative">
+            {/* Notificação estilo iPhone com imagem */}
+            <div className="flex flex-col w-full rounded-2xl bg-black/75 backdrop-blur-xl px-4 pt-3 pb-3 shadow-2xl shadow-black/20 border border-white/10 overflow-hidden animate-float transform transition-transform duration-200 group-hover:scale-[1.02]" style={{ animationDuration: '4.8s', animationDelay: '0.8s' }}>
+              {/* Cabeçalho da notificação */}
+              <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center">
+                  <div className="flex items-center justify-center w-5 h-5 bg-gradient-to-br from-purple-500 to-indigo-400 rounded-md mr-2">
+                    <svg className="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 22H15M12 17V22M8 2H16M16 2C19.3137 2 22 4.68629 22 8V16C22 19.3137 19.3137 22 16 22H8C4.68629 22 2 19.3137 2 16V8C2 4.68629 4.68629 2 8 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 </svg>
               </div>
-              <div>
-                <p className="text-white font-medium">TORNEIO R6</p>
-                <p className="text-gray-400 text-xs">Novo torneio em breve!</p>
+                  <div className="flex items-center">
+                    <span className="text-white text-xs font-semibold">R6 News</span>
+                    <span className="mx-1 text-gray-400">•</span>
+                    <span className="text-gray-400 text-[10px]">20 min</span>
               </div>
             </div>
             <button
-              onClick={() => closeNotification('notification4')}
-              className="text-gray-400 hover:bg-white/10 p-1 rounded-md transition-colors ease-linear"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18 18 6M6 6l12 12"
-                ></path>
+                  onClick={() => closeNotification('notification5')}
+                  className="text-gray-400 hover:text-white p-0.5 rounded-full transition-colors"
+                >
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
           </div>
+              
+              {/* Conteúdo da notificação */}
+              <div className="mt-0.5">
+                <h4 className="text-white font-bold text-sm">NOVA TEMPORADA ANUNCIADA</h4>
+                <p className="text-gray-300 text-xs mt-0.5">Operação Collision Point chega com novo operador.</p>
+                
+                {/* Imagem de miniatura */}
+                <div className="mt-2 rounded-lg overflow-hidden w-full h-24 bg-gray-900 relative">
+                  <img 
+                    src="/images/banners/r6-operation.jpg" 
+                    alt="Nova Operação" 
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.onerror = null;
+                      target.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM3OTM1ZmYiIHN0b3Atb3BhY2l0eT0iMC4xIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAxOTQ1IiBzdG9wLW9wYWNpdHk9IjAuMDUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBmaWxsPSJ1cmwoI2cpIiBkPSJNMjUsMzAgTDUwLDcwIEw3NSwzMCIvPjwvc3ZnPg==';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute bottom-2 left-2 flex items-center">
+                    <div className="w-6 h-6 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                      <svg className="w-3 h-3 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 3L19 12L5 21V3Z" fill="currentColor"/>
+                      </svg>
+                    </div>
+                    <span className="text-white text-xs ml-1">1:24</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Barra de tempo */}
+              <div className="w-full mt-3 relative h-[3px] bg-white/10 rounded-full overflow-hidden">
+                <div className="absolute inset-y-0 left-0 bg-purple-500 w-1/6 rounded-full transition-all"></div>
+              </div>
+            </div>
+            
+            {/* Reflexo sutil embaixo da notificação */}
+            <div className="w-[95%] h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent mx-auto"></div>
+          </div>
         )}
-
-        {/* Nova notificação com design moderno */}
-
       </div>
 
       {/* Grade de fundo */}
@@ -712,8 +710,10 @@ const ProfileHero: React.FC = () => {
             <button className="px-6 py-3 bg-gradient-to-r from-liquid-teal to-liquid-blue text-white font-medium rounded-md shadow-lg shadow-liquid-teal/20 hover:shadow-liquid-teal/40 transition-all transform hover:-translate-y-1">
               Entrar na Comunidade
             </button>
-            <button className="px-6 py-3 bg-transparent border border-liquid-teal/50 text-liquid-teal font-medium rounded-md hover:bg-liquid-teal/10 transition-all">
-              Ver Conteúdo
+            <button 
+              onClick={handleExplorarCatalogo}
+              className="px-6 py-3 bg-transparent border border-liquid-teal/50 text-liquid-teal font-medium rounded-md hover:bg-liquid-teal/10 transition-all">
+              Explorar Catálogo
             </button>
           </div>
         </div>
@@ -799,12 +799,12 @@ const ProfileHero: React.FC = () => {
                   </p>
 
                   <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
-                    <a
-                      href="#signup"
+                    <button
+                      onClick={handleExplorarCatalogo}
                       className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-liquid-teal to-liquid-blue text-white font-medium rounded-md shadow-lg shadow-liquid-teal/20 hover:shadow-liquid-teal/40 transition-all transform hover:-translate-y-1"
                     >
                       Acessar Catalogo de contas
-                    </a>
+                    </button>
                     <a
                       href="#learn-more"
                       className="w-full sm:w-auto px-8 py-3 bg-transparent border border-liquid-teal/50 text-liquid-teal font-medium rounded-md hover:bg-liquid-teal/10 transition-all"
@@ -1279,7 +1279,10 @@ const ProfileHero: React.FC = () => {
 
             {/* Botão para explorar mais */}
             <div className="mt-10 text-center">
-              <button className="bg-black/20 hover:bg-black/30 text-liquid-blue border border-liquid-blue/30 px-6 py-3 rounded-md backdrop-blur-sm transition-all hover:border-liquid-blue/60 inline-flex items-center">
+              <button 
+                onClick={handleExplorarCatalogo}
+                className="bg-black/20 hover:bg-black/30 text-liquid-blue border border-liquid-blue/30 px-6 py-3 rounded-md backdrop-blur-sm transition-all hover:border-liquid-blue/60 inline-flex items-center"
+              >
                 <span>EXPLORAR CATÁLOGO COMPLETO</span>
                 <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -1490,7 +1493,7 @@ const ProfileHero: React.FC = () => {
         <div className="w-full mb-12">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-liquid-teal to-liquid-blue">Transformando a Experiência no Melhor R6 do Brasil</h2>
-            <p className="text-gray-300 mt-5 mb-4">Sempre buscamos melhorar nossos serviços com base no seu feedback para garantir que você obtenha o máximo da nossa comunidade.</p>
+            <p className="text-gray-300 mt-5 mb-4">Sempre buscamos melhorar nossos serviços com base no seu feedback para garantir que você obtenha o máximo de nossos serviços.</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -1720,14 +1723,13 @@ const ProfileHero: React.FC = () => {
             <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-liquid-blue/20 to-transparent rounded-tr-3xl"></div>
 
             <div className="relative z-10 text-center">
-              <h2 className="text-2xl font-bold mb-4">Pronto para se juntar à elite do Rainbow Six?</h2>
+              <h2 className="text-2xl font-bold mb-4">Deseja anunciar sua conta do Rainbow Six?</h2>
               <p className="text-gray-300 mb-6 max-w-xl mx-auto">
-                Participe da maior comunidade do Brasil e tenha acesso a treinos exclusivos,
-                estratégias avançadas e oportunidades de competir com os melhores.
+              Junte-se à maior comunidade do Brasil e aproveite para trocar, anunciar e comprar contas em nossa plataforma com segurança e confiança.
               </p>
 
               <button className="px-8 py-3 bg-gradient-to-r from-liquid-teal to-liquid-blue text-white font-bold rounded-md shadow-lg shadow-liquid-teal/20 hover:shadow-liquid-teal/40 transition-all transform hover:-translate-y-1">
-                Começar Agora
+                Anunciar conta
               </button>
             </div>
           </div>
