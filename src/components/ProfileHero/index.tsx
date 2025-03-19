@@ -930,9 +930,22 @@ const ProfileHero: React.FC = () => {
         </div>
 
         {/* Mini Catálogo de Contas - Carrossel de contas à venda */}
-
-
         <section className="py-16 relative overflow-hidden my-12">
+          {/* Background semelhante ao da seção de créditos R6 */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-tl from-gray-900 via-indigo-950 to-gray-900 opacity-90"></div>
+
+            {/* Formas flutuantes e efeitos - mantidos como no original */}
+            <div className="absolute top-10 left-1/4 w-[300px] h-[300px] bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full blur-2xl animate-[float_5s_ease-in-out_infinite]"></div>
+            <div className="absolute bottom-20 right-1/5 w-[400px] h-[200px] bg-gradient-to-b from-cyan-500/15 to-transparent rounded-[50%] blur-xl animate-[sway_7s_ease-in-out_infinite]"></div>
+            <div className="absolute inset-0">
+              <div className="absolute w-[150%] h-px bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent -rotate-12 top-1/3 left-1/2 -translate-x-1/2 animate-[slide_6s_linear_infinite]"></div>
+              <div className="absolute w-[150%] h-px bg-gradient-to-r from-transparent via-purple-400/20 to-transparent rotate-6 bottom-1/4 left-1/2 -translate-x-1/2 animate-[slide_4s_linear_infinite]"></div>
+            </div>
+            <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-white/50 rounded-full blur-sm animate-[blink_3s_ease-in-out_infinite]" />
+            <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-indigo-300/40 rounded-full blur-sm animate-[blink_2s_ease-in-out_infinite_delay-1s]" />
+          </div>
+
           {/* Efeito de grade digital no fundo */}
           <div className="absolute inset-0 opacity-10">
             <div className="h-full w-full" style={{
@@ -947,22 +960,21 @@ const ProfileHero: React.FC = () => {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-liquid-blue/50 to-transparent"></div>
           </div>
 
-          <div className="container mx-auto px-4">
+          <div className="w-full px-4">
             <div className="text-center mb-10">
               <div className="inline-block relative">
                 <h2 className="text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-liquid-teal to-liquid-blue animate-gradient-x title-font-alt uppercase tracking-wider">Contas em Destaque</h2>
                 <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-liquid-teal/0 via-liquid-teal to-liquid-teal/0 rounded-full"></div>
                 <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-liquid-teal to-liquid-blue rounded-full"></div>
               </div>
-              <p className="text-gray-300 mt-10 text-lg">Veja nossa seleção de contas premium para Rainbow Six</p>
             </div>
 
             {/* Controles do carrossel e indicador */}
-            <div className="relative">
+            <div className="max-w-6xl mx-auto">
               <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center space-x-1">
                   <div className="w-2 h-2 bg-liquid-blue rounded-full animate-pulse"></div>
-                  <span className="text-xs text-liquid-blue/80 font-medium">
+                  <span className="text-xs text-white font-medium">
                     VISUALIZANDO {currentPage * accountsPerPage + 1}-{Math.min((currentPage + 1) * accountsPerPage, accounts.length)} DE {accounts.length} CONTAS
                   </span>
                 </div>
@@ -987,95 +999,99 @@ const ProfileHero: React.FC = () => {
               </div>
             </div>
 
-            {/* Carrossel de contas - Grid responsivo */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
-              {currentAccounts.map((account) => (
-                <div key={account.id} className="backdrop-blur-sm border border-liquid-blue/30 rounded-lg overflow-hidden relative group transition-all duration-300 transform hover:-translate-y-1 hover:border-liquid-blue/60 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),_0_5px_15px_rgba(0,0,0,0.4)]">
-                  {/* Efeito holográfico */}
-                  <div className="absolute inset-0 opacity-20 overflow-hidden">
-                    <div className="w-full h-full" style={{
-                      background: 'linear-gradient(135deg, rgba(0,150,255,0.05) 0%, transparent 100%)',
-                    }}></div>
-                    <div className="absolute h-[500%] w-[500%] top-[-250%] left-[-250%] bg-gradient-to-r from-transparent via-blue-500/5 to-transparent transform rotate-45 animate-[marquee_20s_linear_infinite]"></div>
-                  </div>
+            {/* Carrossel de contas - centralizando com div externa */}
+            <div className="flex justify-center">
+              <div className="max-w-[1200px] w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6">
+                  {currentAccounts.map((account) => (
+                    <div key={account.id} className="backdrop-blur-sm border border-liquid-blue/30 rounded-lg overflow-hidden relative group transition-all duration-300 transform hover:-translate-y-1 hover:border-liquid-blue/60 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),_0_5px_15px_rgba(0,0,0,0.4)]">
+                      {/* Efeito holográfico */}
+                      <div className="absolute inset-0 opacity-20 overflow-hidden">
+                        <div className="w-full h-full" style={{
+                          background: 'linear-gradient(135deg, rgba(0,150,255,0.05) 0%, transparent 100%)',
+                        }}></div>
+                        <div className="absolute h-[500%] w-[500%] top-[-250%] left-[-250%] bg-gradient-to-r from-transparent via-blue-500/5 to-transparent transform rotate-45 animate-[marquee_20s_linear_infinite]"></div>
+                      </div>
 
-                  {/* Tag Rank */}
-                  <div className={`absolute top-2 left-2 bg-gradient-to-r ${account.rankColor} px-2 py-1 rounded text-xs font-bold text-white shadow-md z-20 flex items-center`}>
-                    {account.rankIcon}
-                    {account.rank}
-                  </div>
+                      {/* Tag Rank */}
+                      <div className={`absolute top-2 left-2 bg-gradient-to-r ${account.rankColor} px-2 py-1 rounded text-xs font-bold text-white shadow-md z-20 flex items-center`}>
+                        {account.rankIcon}
+                        {account.rank}
+                      </div>
 
-                  {/* Tag de tipo de conta ou selo de promoção */}
-                  {account.badgeText && (
-                    <div className={`absolute top-2 right-2 ${account.badgeColor} px-2 py-1 rounded text-xs font-bold z-20 shadow-md`}>
-                      {account.badgeText}
-                    </div>
-                  )}
+                      {/* Tag de tipo de conta ou selo de promoção */}
+                      {account.badgeText && (
+                        <div className={`absolute top-2 right-2 ${account.badgeColor} px-2 py-1 rounded text-xs font-bold z-20 shadow-md`}>
+                          {account.badgeText}
+                        </div>
+                      )}
 
-                  {/* Imagem da conta */}
-                  <div className="h-80 relative">
-                    <img
-                      src={account.image}
-                      alt={`Conta ${account.rank}`}
-                      className="w-full h-full object-contain"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = account.placeholderImage;
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                  </div>
+                      {/* Imagem da conta */}
+                      <div className="h-80 relative">
+                        <img
+                          src={account.image}
+                          alt={`Conta ${account.rank}`}
+                          className="w-full h-full object-contain"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = account.placeholderImage;
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                      </div>
 
-                  {/* Info da conta */}
-                  <div className="p-4 relative z-10">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-lg font-bold text-white">{account.title}</h3>
-                      <div className="text-right">
-                        {account.originalPrice && (
-                          <div className="text-gray-400 text-xs line-through">{account.originalPrice}</div>
-                        )}
-                        <div className="text-xl font-bold text-white">{account.price}</div>
+                      {/* Info da conta */}
+                      <div className="p-4 relative z-10">
+                        <div className="flex justify-between items-start mb-2">
+                          <h3 className="text-lg font-bold text-white">{account.title}</h3>
+                          <div className="text-right">
+                            {account.originalPrice && (
+                              <div className="text-gray-400 text-xs line-through">{account.originalPrice}</div>
+                            )}
+                            <div className="text-xl font-bold text-white">{account.price}</div>
+                          </div>
+                        </div>
+
+                        <div className="space-y-2 mb-3">
+                          <div className="flex items-center text-sm text-gray-300">
+                            <span className="w-3 h-3 bg-liquid-blue/20 rounded-full flex items-center justify-center mr-2">
+                              <span className="w-1.5 h-1.5 bg-liquid-blue rounded-full"></span>
+                            </span>
+                            {account.operators}
+                          </div>
+                          <div className="flex items-center text-sm text-gray-300">
+                            <span className="w-3 h-3 bg-liquid-blue/20 rounded-full flex items-center justify-center mr-2">
+                              <span className="w-1.5 h-1.5 bg-liquid-blue rounded-full"></span>
+                            </span>
+                            {account.skins}
+                          </div>
+                          <div className="flex items-center text-sm text-gray-300">
+                            <span className="w-3 h-3 bg-liquid-blue/20 rounded-full flex items-center justify-center mr-2">
+                              <span className="w-1.5 h-1.5 bg-liquid-blue rounded-full"></span>
+                            </span>
+                            {account.stats}
+                          </div>
+                        </div>
+
+                        {/* Tags */}
+                        <div className="flex flex-wrap gap-1 mb-3">
+                          {account.tags.map((tag, index) => (
+                            <span key={index} className={`text-xs px-2 py-0.5 ${tag.color} rounded`}>{tag.text}</span>
+                          ))}
+                        </div>
+
+                        {/* Botão */}
+                        <button className="w-full bg-gradient-to-r from-liquid-blue to-blue-600 hover:from-liquid-blue/90 hover:to-blue-600/90 text-white py-2 rounded-md transition-all flex items-center justify-center mt-2">
+                          <span>Ver detalhes</span>
+                          <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </button>
                       </div>
                     </div>
-
-                    <div className="space-y-2 mb-3">
-                      <div className="flex items-center text-sm text-gray-300">
-                        <span className="w-3 h-3 bg-liquid-blue/20 rounded-full flex items-center justify-center mr-2">
-                          <span className="w-1.5 h-1.5 bg-liquid-blue rounded-full"></span>
-                        </span>
-                        {account.operators}
-                      </div>
-                      <div className="flex items-center text-sm text-gray-300">
-                        <span className="w-3 h-3 bg-liquid-blue/20 rounded-full flex items-center justify-center mr-2">
-                          <span className="w-1.5 h-1.5 bg-liquid-blue rounded-full"></span>
-                        </span>
-                        {account.skins}
-                      </div>
-                      <div className="flex items-center text-sm text-gray-300">
-                        <span className="w-3 h-3 bg-liquid-blue/20 rounded-full flex items-center justify-center mr-2">
-                          <span className="w-1.5 h-1.5 bg-liquid-blue rounded-full"></span>
-                        </span>
-                        {account.stats}
-                      </div>
-                    </div>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-1 mb-3">
-                      {account.tags.map((tag, index) => (
-                        <span key={index} className={`text-xs px-2 py-0.5 ${tag.color} rounded`}>{tag.text}</span>
-                      ))}
-                    </div>
-
-                    {/* Botão */}
-                    <button className="w-full bg-gradient-to-r from-liquid-blue to-blue-600 hover:from-liquid-blue/90 hover:to-blue-600/90 text-white py-2 rounded-md transition-all flex items-center justify-center mt-2">
-                      <span>Ver detalhes</span>
-                      <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </button>
-                  </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
 
             {/* Botão para explorar mais */}
@@ -1086,16 +1102,16 @@ const ProfileHero: React.FC = () => {
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
-              <p className="text-gray-400 text-xs mt-2">{accounts.length} contas disponíveis para compra imediata</p>
+              <p className="text-white text-xs mt-2">{accounts.length} contas disponíveis para compra imediata</p>
             </div>
           </div>
         </section>
 
 
         {/* R6 Credits Packages Section */}
-        <section className="w-full max-w-6xl mx-auto my-24 relative overflow-hidden p-2">
+        <section className="w-full my-24 relative overflow-hidden p-2">
           {/* Efeito de neon */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-lg ">
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
             {/* Camada de fundo com gradiente suave */}
             <div className="absolute inset-0 bg-gradient-to-tl from-gray-900 via-indigo-950 to-gray-900 opacity-90"></div>
 
@@ -1123,7 +1139,7 @@ const ProfileHero: React.FC = () => {
             </h2>
           </div>
 
-          <div className="relative z-10 p-5">
+          <div className="relative z-10 p-5 max-w-[1800px] mx-auto">
             {/* Decorative elements */}
             <div className="absolute inset-0 bg-gradient-to-b from-liquid-yellow/5 to-transparent rounded-3xl"></div>
             <div className="absolute -top-5 -right-5 w-24 h-24 bg-liquid-yellow/10 rounded-full blur-2xl"></div>
@@ -1131,7 +1147,7 @@ const ProfileHero: React.FC = () => {
 
             {/* Scroll container */}
             <div className="relative max-h-[600px] overflow-y-auto pb-4 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-black/20 [&::-webkit-scrollbar-thumb]:bg-liquid-yellow/50 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-liquid-yellow/70">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-4 md:px-8 lg:px-16">
                 {/* Original 3 packages */}
                 {[
                   {
