@@ -88,6 +88,27 @@ const ProfileHero: React.FC = () => {
         0%, 100% { transform: scaleX(1) scaleY(1); }
         50% { transform: scaleX(1.2) scaleY(1.2); }
       }
+      /* Novas animações para seção de contas em destaque */
+      @keyframes slide {
+        0% { transform: translateX(-100%) rotate(var(--rotation, 0deg)); }
+        100% { transform: translateX(100%) rotate(var(--rotation, 0deg)); }
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 0.2; }
+        50% { opacity: 0.8; }
+      }
+      @keyframes gradient-x {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 100% 50%; }
+      }
+      @keyframes sway {
+        0%, 100% { transform: translateX(-20px); }
+        50% { transform: translateX(20px); }
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
     `;
     document.head.appendChild(styles);
 
@@ -949,12 +970,143 @@ const ProfileHero: React.FC = () => {
           {/* Efeito de grade digital no fundo */}
           <div className="absolute inset-0 opacity-10">
             <div className="h-full w-full" style={{
-              backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(0, 200, 255, 0.05) 25%, rgba(0, 200, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 200, 255, 0.05) 75%, rgba(0, 200, 255, 0.05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(0, 200, 255, 0.05) 25%, rgba(0, 200, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 200, 255, 0.05) 75%, rgba(0, 200, 255, 0.05) 76%, transparent 77%, transparent)',
+              backgroundImage: 'linear-gradient(0deg, transparent 49%, rgba(0, 200, 255, 0.05) 50%, rgba(0, 200, 255, 0.05) 51%, transparent 52%, transparent 99%)',
               backgroundSize: '50px 50px'
             }}></div>
           </div>
 
-          {/* Linhas decorativas */}
+          {/* NOVOS ELEMENTOS: Linhas diagonais */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="h-full w-full" style={{
+              backgroundImage: 'linear-gradient(45deg, transparent 49%, rgba(0, 200, 255, 0.08) 50%, rgba(0, 200, 255, 0.08) 51%, transparent 52%, transparent 99%)',
+              backgroundSize: '40px 40px'
+            }}></div>
+          </div>
+          <div className="absolute inset-0 opacity-10">
+            <div className="h-full w-full" style={{
+              backgroundImage: 'linear-gradient(-45deg, transparent 49%, rgba(0, 200, 255, 0.08) 50%, rgba(0, 200, 255, 0.08) 51%, transparent 52%, transparent 99%)',
+              backgroundSize: '40px 40px'
+            }}></div>
+          </div>
+
+          {/* NOVOS ELEMENTOS: Elementos gráficos decorativos adicionais */}
+          <div className="absolute inset-0 overflow-hidden">
+            {/* Círculo grande com efeito de pulso */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-liquid-blue/10 animate-pulse" style={{ animationDuration: '10s' }}></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-liquid-blue/15 animate-pulse" style={{ animationDuration: '8s' }}></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full border border-liquid-blue/20 animate-pulse" style={{ animationDuration: '6s' }}></div>
+
+            {/* Linhas horizontais de escaneamento com movimento */}
+            <div className="absolute left-0 right-0 h-[1px] bg-cyan-400/20 blur-[1px]" style={{
+              top: '30%',
+              animation: 'scanner 8s linear infinite',
+              boxShadow: '0 0 5px 2px rgba(0, 200, 255, 0.1)'
+            }}></div>
+            <div className="absolute left-0 right-0 h-[1px] bg-purple-400/20 blur-[1px]" style={{
+              top: '70%',
+              animation: 'scanner 10s linear infinite reverse',
+              boxShadow: '0 0 5px 2px rgba(147, 51, 234, 0.1)'
+            }}></div>
+          </div>
+
+          {/* NOVOS ELEMENTOS: Hexágonos/padrões de cyber-tech */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-10 left-1/4 w-20 h-20" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath fill='%2300c8ff' d='M20 0L40 10v20L20 40L0 30V10L20 0z'/%3E%3C/svg%3E")`,
+              backgroundRepeat: 'no-repeat'
+            }}></div>
+            <div className="absolute bottom-20 right-1/4 w-16 h-16" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath fill='%2300c8ff' d='M20 0L40 10v20L20 40L0 30V10L20 0z'/%3E%3C/svg%3E")`,
+              backgroundRepeat: 'no-repeat'
+            }}></div>
+            <div className="absolute top-1/2 right-1/5 w-24 h-24" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath fill='%2300c8ff' d='M20 0L40 10v20L20 40L0 30V10L20 0z'/%3E%3C/svg%3E")`,
+              backgroundRepeat: 'no-repeat'
+            }}></div>
+          </div>
+
+          {/* NOVOS ELEMENTOS: Elementos holográficos e efeitos 3D */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            {/* Grade de hologramas futurista com sensibilidade ao movimento do mouse */}
+            <div
+              className="absolute inset-0 transition-transform duration-200"
+              style={{
+                transform: `perspective(1000px) rotateX(${tiltX / 3}deg) rotateY(${tiltY / 3}deg)`,
+                transformStyle: 'preserve-3d'
+              }}
+            >
+              {/* Linhas de grade com efeito 3D */}
+              <div className="absolute inset-0" style={{ transform: 'translateZ(10px)' }}>
+                <div className="h-full w-full" style={{
+                  backgroundImage: 'linear-gradient(0deg, transparent 49.5%, rgba(0, 200, 255, 0.15) 50%, rgba(0, 200, 255, 0.15) 50.5%, transparent 51%, transparent 99.5%)',
+                  backgroundSize: '100px 100px'
+                }}></div>
+              </div>
+
+              {/* Pontos de dados que se movem com o mouse */}
+              <div style={{ transform: `translateZ(30px) translateX(${-mousePosition.x * 20}px) translateY(${-mousePosition.y * 20}px)` }}>
+                <div className="absolute top-1/4 left-1/3 w-2 h-2 rounded-full bg-cyan-400/50"></div>
+                <div className="absolute top-3/4 left-2/3 w-1.5 h-1.5 rounded-full bg-blue-400/40"></div>
+                <div className="absolute top-2/3 left-1/4 w-1 h-1 rounded-full bg-indigo-400/60"></div>
+                <div className="absolute top-1/4 right-1/4 w-2 h-2 rounded-full bg-cyan-400/30"></div>
+              </div>
+            </div>
+
+            {/* Efeito de "escaneamento" holográfico */}
+            <div className="absolute inset-0 overflow-hidden">
+              {/* Linha de escaneamento vertical que se move da esquerda para direita */}
+              <div
+                className="absolute top-0 bottom-0 w-[3px] bg-gradient-to-b from-transparent via-cyan-400/30 to-transparent blur-[2px]"
+                style={{
+                  left: '10%',
+                  animation: 'slide 7s linear infinite',
+                  boxShadow: '0 0 8px 2px rgba(0, 200, 255, 0.1)'
+                }}
+              ></div>
+
+              {/* Efeito de brilho que segue o mouse */}
+              <div
+                className="absolute w-[300px] h-[300px] rounded-full opacity-10"
+                style={{
+                  background: 'radial-gradient(circle, rgba(0, 200, 255, 0.3) 0%, rgba(0, 0, 0, 0) 70%)',
+                  left: `calc(${mousePosition.x * 100 + 50}% - 150px)`,
+                  top: `calc(${mousePosition.y * 100 + 50}% - 150px)`,
+                  transition: 'left 0.3s ease-out, top 0.3s ease-out'
+                }}
+              ></div>
+            </div>
+
+            {/* Elemento circular de "interface" holográfica */}
+            <div className="absolute top-3/4 right-1/4 w-[200px] h-[200px]">
+              {/* Círculo exterior com rotação */}
+              <div className="absolute inset-0 rounded-full border border-cyan-500/20"
+                style={{ animation: 'spin 20s linear infinite' }}></div>
+
+              {/* Círculo interior com rotação inversa */}
+              <div className="absolute inset-8 rounded-full border border-purple-500/20"
+                style={{ animation: 'spin 15s linear infinite reverse' }}></div>
+
+              {/* Marcas do círculo */}
+              {[...Array(12)].map((_, i) => (
+                <div key={i} className="absolute top-1/2 left-1/2 w-full h-0.5 -translate-y-1/2"
+                  style={{
+                    transformOrigin: 'left center',
+                    transform: `rotate(${i * 30}deg)`,
+                  }}>
+                  <div className="absolute right-0 w-2 h-0.5 bg-cyan-400/30"></div>
+                </div>
+              ))}
+
+              {/* Texto central */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-cyan-900/20 flex items-center justify-center border border-cyan-500/40">
+                  <div className="w-6 h-6 rounded-full bg-cyan-400/10 animate-pulse"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Linhas decorativas no topo e rodapé */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-liquid-blue/50 to-transparent"></div>
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-liquid-blue/50 to-transparent"></div>
