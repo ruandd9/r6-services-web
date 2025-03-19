@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="mt-12 border-t border-gray-700 pt-8">
           <p className="text-center text-gray-400">
-            © 2000 - {new Date().getFullYear()} Team Liquid. Todos os direitos reservados.
+            © 2015 - {new Date().getFullYear()} Todos os direitos reservados.
           </p>
         </div>
       </div>
