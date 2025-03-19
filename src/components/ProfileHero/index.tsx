@@ -136,7 +136,7 @@ const ProfileHero: React.FC = () => {
     id: number;
     rank: string;
     rankColor: string;
-    rankIcon: React.ReactNode;
+    rankIcon: string; // Alterado de React.ReactNode para string
     badgeText?: string;
     badgeColor?: string;
     image: string;
@@ -147,7 +147,7 @@ const ProfileHero: React.FC = () => {
     operators: string;
     skins: string;
     stats: string;
-    description?: string; // Adicionando campo de descrição
+    description?: string;
     tags: {
       text: string;
       color: string;
@@ -161,12 +161,7 @@ const ProfileHero: React.FC = () => {
       id: 1,
       rank: "DIAMANTE",
       rankColor: "from-purple-600 to-blue-500",
-      rankIcon: (
-        <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 15L8.5 10L15.5 10L12 15Z" fill="white" />
-          <path d="M20 20H4L12 4L20 20Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      ),
+      rankIcon: "/images/accounts/rankicons/Diamond 1.png",
       image: "/images/accounts/Y5S4_STADIUM2_CARD_Vigil.png",
       placeholderImage: "https://placehold.co/600x400/001a45/00c8ff?text=Conta+Diamante",
       title: "Diamante Legacy",
@@ -186,11 +181,7 @@ const ProfileHero: React.FC = () => {
       id: 2,
       rank: "CAMPEÃO",
       rankColor: "from-yellow-500 to-amber-600",
-      rankIcon: (
-        <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z" fill="currentColor" />
-        </svg>
-      ),
+      rankIcon: "/images/accounts/rankicons/Champions.png",
       badgeText: "CONTA RARA",
       badgeColor: "bg-black/40 backdrop-blur-sm border border-liquid-blue/30 text-liquid-blue",
       image: "/images/accounts/Y5S4_STADIUM2_CARD_Wamai.png",
@@ -211,11 +202,7 @@ const ProfileHero: React.FC = () => {
       id: 3,
       rank: "PLATINA",
       rankColor: "from-blue-500 to-indigo-500",
-      rankIcon: (
-        <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 20H4L12 4L20 20Z" fill="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      ),
+      rankIcon: "/images/accounts/rankicons/Platinum 1.png",
       badgeText: "-20% OFF",
       badgeColor: "bg-gradient-to-r from-liquid-yellow to-amber-500 text-liquid-navy",
       image: "/images/accounts/Y5S4_STADIUM2_CARD_Valkyrie.png",
@@ -238,11 +225,7 @@ const ProfileHero: React.FC = () => {
       id: 4,
       rank: "OURO",
       rankColor: "from-yellow-400 to-amber-500",
-      rankIcon: (
-        <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z" fill="currentColor" />
-        </svg>
-      ),
+      rankIcon: "/images/accounts/rankicons/Gold 1.png",
       image: "/images/accounts/Y5S4_STADIUM2_CARD_IQ.png",
       placeholderImage: "https://placehold.co/600x400/001a45/FFD700?text=Conta+Ouro",
       title: "Gold Budget",
@@ -260,12 +243,7 @@ const ProfileHero: React.FC = () => {
       id: 5,
       rank: "DIAMANTE",
       rankColor: "from-purple-600 to-blue-500",
-      rankIcon: (
-        <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 15L8.5 10L15.5 10L12 15Z" fill="white" />
-          <path d="M20 20H4L12 4L20 20Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      ),
+      rankIcon: "/images/accounts/rankicons/Diamond 1.png",
       badgeText: "PRO PLAYER",
       badgeColor: "bg-gradient-to-r from-red-500 to-purple-500 text-white",
       image: "/images/accounts/Y5S4_STADIUM2_CARD_Capitao.png",
@@ -287,12 +265,7 @@ const ProfileHero: React.FC = () => {
       id: 6,
       rank: "PRATA",
       rankColor: "from-gray-400 to-gray-500",
-      rankIcon: (
-        <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 15L8.5 10L15.5 10L12 15Z" fill="white" />
-          <path d="M20 20H4L12 4L20 20Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      ),
+      rankIcon: "/images/accounts/rankicons/Silver 1.png",
       badgeText: "INICIANTE",
       badgeColor: "bg-gradient-to-r from-blue-400 to-cyan-400 text-white",
       image: "/images/accounts/Y5S4_STADIUM2_CARD_Ash.png",
@@ -1210,7 +1183,11 @@ const ProfileHero: React.FC = () => {
                       <div
                         className={`absolute top-3 left-3 bg-black/40 backdrop-blur-sm border border-liquid-blue/30 px-3 py-1 rounded-lg text-xs font-bold text-white shadow-[0_0_10px_rgba(0,150,255,0.2)] z-20 flex items-center gap-1`}
                       >
-                        {account.rankIcon}
+                        <img 
+                          src={account.rankIcon} 
+                          alt={account.rank}
+                          className="w-5 h-5 mr-1"
+                        />
                         {account.rank}
                       </div>
 
@@ -1376,40 +1353,44 @@ const ProfileHero: React.FC = () => {
             {/* Scroll container */}
             <div className="relative max-h-[600px] overflow-y-auto pb-4 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-black/20 [&::-webkit-scrollbar-thumb]:bg-liquid-yellow/50 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-liquid-yellow/70">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-4 md:px-8 lg:px-16">
-                {/* Original 3 packages */}
+                {/* Pacotes de créditos R6 com as novas imagens */}
                 {[
                   {
                     credits: 600,
-                    name: "Pacote Iniciante",
+                    name: "Pacote Prata",
                     description: "Perfeito para começar",
                     bonus: 50,
                     originalPrice: "R$ 29,90",
-                    price: "R$ 19,90"
+                    price: "R$ 19,90",
+                    imagePath: "/images/accounts/rankicons/R6CREDITS PRATA.png"
                   },
                   {
                     credits: 1200,
-                    name: "Pacote Básico",
+                    name: "Pacote Prata Plus",
                     description: "Para jogadores casuais",
                     bonus: 150,
                     originalPrice: "R$ 49,90",
-                    price: "R$ 39,90"
+                    price: "R$ 39,90",
+                    imagePath: "/images/accounts/rankicons/R6CREDITS PRATA PLUS.png"
                   },
                   {
                     credits: 2400,
-                    name: "Pacote Pro",
+                    name: "Pacote Ouro",
                     description: "O favorito da comunidade",
                     bonus: 400,
                     originalPrice: "R$ 89,90",
                     price: "R$ 69,90",
-                    featured: true
+                    featured: true,
+                    imagePath: "/images/accounts/rankicons/R6CREDITS OURO.png"
                   },
                   {
                     credits: 3600,
-                    name: "Pacote Avançado",
+                    name: "Pacote Ouro Plus",
                     description: "Para jogadores dedicados",
                     bonus: 800,
                     originalPrice: "R$ 129,90",
-                    price: "R$ 99,90"
+                    price: "R$ 99,90",
+                    imagePath: "/images/accounts/rankicons/R6CREDITS OURO PLUS.png"
                   },
                   {
                     credits: 4800,
@@ -1417,7 +1398,8 @@ const ProfileHero: React.FC = () => {
                     description: "Para jogadores exigentes",
                     bonus: 1200,
                     originalPrice: "R$ 159,90",
-                    price: "R$ 129,90"
+                    price: "R$ 129,90",
+                    imagePath: "/images/accounts/rankicons/R6CREDITS OURO PLUS.png"
                   },
                   {
                     credits: 6000,
@@ -1425,7 +1407,8 @@ const ProfileHero: React.FC = () => {
                     description: "Experiência completa",
                     bonus: 1800,
                     originalPrice: "R$ 199,90",
-                    price: "R$ 169,90"
+                    price: "R$ 169,90",
+                    imagePath: "/images/accounts/rankicons/R6CREDITS OURO.png"
                   },
                   {
                     credits: 8400,
@@ -1433,7 +1416,8 @@ const ProfileHero: React.FC = () => {
                     description: "Para os mais exigentes",
                     bonus: 2400,
                     originalPrice: "R$ 259,90",
-                    price: "R$ 219,90"
+                    price: "R$ 219,90",
+                    imagePath: "/images/accounts/rankicons/R6CREDITS OURO PLUS.png"
                   },
                   {
                     credits: 12000,
@@ -1441,7 +1425,8 @@ const ProfileHero: React.FC = () => {
                     description: "Domine o jogo",
                     bonus: 3600,
                     originalPrice: "R$ 349,90",
-                    price: "R$ 299,90"
+                    price: "R$ 299,90",
+                    imagePath: "/images/accounts/rankicons/R6CREDITS OURO.png"
                   },
                   {
                     credits: 16000,
@@ -1449,7 +1434,8 @@ const ProfileHero: React.FC = () => {
                     description: "Para verdadeiros campeões",
                     bonus: 5000,
                     originalPrice: "R$ 449,90",
-                    price: "R$ 399,90"
+                    price: "R$ 399,90",
+                    imagePath: "/images/accounts/rankicons/R6CREDITS OURO PLUS.png"
                   }
                 ].map((pack, index) => (
                   <div key={index} className="relative flex flex-col gap-4 p-4 w-[300px] rounded-xl bg-[#12131A] overflow-hidden group">
@@ -1465,10 +1451,23 @@ const ProfileHero: React.FC = () => {
                       </div>
                     )}
 
+                    {/* Imagem do pacote */}
+                    <div className="flex justify-center mb-4">
+                      <img 
+                        src={pack.imagePath} 
+                        alt={pack.name} 
+                        className="h-40 w-auto object-contain hover:scale-105 transition-transform"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM3OTM1ZmYiIHN0b3Atb3BhY2l0eT0iMC4xIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAxOTQ1IiBzdG9wLW9wYWNpdHk9IjAuMDUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBmaWxsPSJ1cmwoI2cpIiBkPSJNMjUsMzAgTDUwLDcwIEw3NSwzMCIvPjwvc3ZnPg==';
+                        }}
+                      />
+                    </div>
+
                     {/* Card content */}
                     <div className="flex flex-col gap-4">
                       {/* Title section */}
-                      <div className="flex flex-col">
+                      <div className="flex flex-col text-center">
                         <h3 className="text-lg font-bold text-white">{pack.name}</h3>
                         <p className="text-sm text-gray-400">{pack.description}</p>
                       </div>
@@ -1840,7 +1839,11 @@ const ProfileHero: React.FC = () => {
                       <div
                         className={`bg-black/40 backdrop-blur-sm border border-liquid-blue/30 px-3 py-1 rounded-lg text-xs font-bold text-white shadow-[0_0_10px_rgba(0,150,255,0.2)] flex items-center gap-1 bg-gradient-to-r ${selectedAccount.rankColor}`}
                       >
-                        {selectedAccount.rankIcon}
+                        <img 
+                          src={selectedAccount.rankIcon} 
+                          alt={selectedAccount.rank}
+                          className="w-5 h-5 mr-1"
+                        />
                         {selectedAccount.rank}
                       </div>
                       

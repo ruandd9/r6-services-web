@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 interface AccountData {
   id: number;
   rank: string;
   rankColor: string;
-  rankIcon: React.ReactNode;
+  rankIcon: string;
   badgeText?: string;
   badgeColor?: string;
   image: string;
@@ -67,12 +67,7 @@ const AccountCatalog: React.FC = () => {
       id: 1,
       rank: "DIAMANTE",
       rankColor: "from-purple-600 to-blue-500",
-      rankIcon: (
-        <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 15L8.5 10L15.5 10L12 15Z" fill="white" />
-          <path d="M20 20H4L12 4L20 20Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      ),
+      rankIcon: "/images/accounts/rankicons/Diamond 1.png",
       image: "/images/accounts/Y5S4_STADIUM2_CARD_Vigil.png",
       placeholderImage: "https://placehold.co/600x400/001a45/00c8ff?text=Conta+Diamante",
       title: "Diamante Legacy",
@@ -97,11 +92,7 @@ const AccountCatalog: React.FC = () => {
       id: 2,
       rank: "CAMPEÃO",
       rankColor: "from-yellow-500 to-amber-600",
-      rankIcon: (
-        <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z" fill="currentColor" />
-        </svg>
-      ),
+      rankIcon: "/images/accounts/rankicons/Champions.png",
       badgeText: "CONTA RARA",
       badgeColor: "bg-black/40 backdrop-blur-sm border border-liquid-blue/30 text-liquid-blue",
       image: "/images/accounts/Y5S4_STADIUM2_CARD_Wamai.png",
@@ -123,8 +114,143 @@ const AccountCatalog: React.FC = () => {
       region: "eu",
       createdAt: "2023-09-22"
     },
-    // ... mais contas conforme o código anterior
-
+    {
+      id: 3,
+      rank: "OURO",
+      rankColor: "from-yellow-400 to-amber-500",
+      rankIcon: "/images/accounts/rankicons/Gold 3.png",
+      image: "/images/accounts/Y5S4_STADIUM2_CARD_Blitz.png",
+      placeholderImage: "https://placehold.co/600x400/001a45/ffb700?text=Conta+Ouro",
+      title: "Gold Account",
+      price: "R$ 189,90",
+      operators: "Operadores: 32/46 desbloqueados",
+      skins: "8 skins raras",
+      stats: "K/D: 1.2 | W/L: 55%",
+      description: "Conta com progressão sólida e estatísticas estáveis. Bom custo-benefício para jogadores intermediários.",
+      tags: [
+        { text: "Battlepass", color: "bg-blue-500/20 text-blue-400" },
+        { text: "Starter", color: "bg-green-500/20 text-green-400" },
+      ],
+      featured: false,
+      level: 143,
+      platform: "ps",
+      region: "eu",
+      createdAt: "2023-11-05"
+    },
+    {
+      id: 4,
+      rank: "PLATINA",
+      rankColor: "from-teal-400 to-blue-500",
+      rankIcon: "/images/accounts/rankicons/Platinum 2.png",
+      image: "/images/accounts/Y5S4_STADIUM2_CARD_Doc.png",
+      placeholderImage: "https://placehold.co/600x400/001a45/7fffd4?text=Conta+Platina",
+      title: "Platinum Legacy",
+      price: "R$ 299,90",
+      operators: "Operadores: 38/46 desbloqueados",
+      skins: "22 skins raras",
+      stats: "K/D: 1.5 | W/L: 61%",
+      description: "Conta completa para jogadores experientes com diversos cosméticos e estatísticas competitivas.",
+      tags: [
+        { text: "Twitch Drops", color: "bg-purple-500/20 text-purple-400" },
+        { text: "Year 1 Pass", color: "bg-blue-500/20 text-blue-400" },
+      ],
+      featured: false,
+      level: 210,
+      platform: "xbox",
+      region: "na",
+      createdAt: "2023-10-18"
+    },
+    {
+      id: 5,
+      rank: "PRATA",
+      rankColor: "from-gray-400 to-slate-500",
+      rankIcon: "/images/accounts/rankicons/Silver 1.png",
+      image: "/images/accounts/Y5S4_STADIUM2_CARD_Oryx.png",
+      placeholderImage: "https://placehold.co/600x400/001a45/c0c0c0?text=Conta+Prata",
+      title: "Silver Starter",
+      price: "R$ 99,90",
+      operators: "Operadores: 25/46 desbloqueados",
+      skins: "4 skins padrão",
+      stats: "K/D: 1.0 | W/L: 50%",
+      description: "Conta inicial ideal para novos jogadores. Uma excelente introdução ao jogo com alguns operadores desbloqueados.",
+      tags: [
+        { text: "Beginner", color: "bg-green-500/20 text-green-400" },
+        { text: "Budget", color: "bg-blue-500/20 text-blue-400" },
+      ],
+      featured: false,
+      level: 78,
+      platform: "pc",
+      region: "as",
+      createdAt: "2023-12-01"
+    },
+    {
+      id: 6,
+      rank: "NÃO RANQUEADO",
+      rankColor: "from-gray-500 to-slate-700",
+      rankIcon: "/images/accounts/rankicons/Unranked.png",
+      image: "/images/accounts/Y5S4_STADIUM2_CARD_Iana.png",
+      placeholderImage: "https://placehold.co/600x400/001a45/808080?text=Conta+Não+Ranqueada",
+      title: "Conta Novata",
+      price: "R$ 59,90",
+      operators: "Operadores: 15/46 desbloqueados",
+      skins: "2 skins básicas",
+      stats: "K/D: 0.8 | W/L: 45%",
+      description: "Conta para iniciantes que querem experimentar o jogo sem compromisso. Poucos operadores mas suficientes para começar.",
+      tags: [
+        { text: "Novato", color: "bg-green-500/20 text-green-400" },
+      ],
+      featured: false,
+      level: 32,
+      platform: "pc",
+      region: "sa",
+      createdAt: "2023-12-20"
+    },
+    {
+      id: 7,
+      rank: "BRONZE",
+      rankColor: "from-amber-700 to-yellow-800",
+      rankIcon: "/images/accounts/rankicons/Bronze 1.png",
+      image: "/images/accounts/Y5S4_STADIUM2_CARD_Zofia.png",
+      placeholderImage: "https://placehold.co/600x400/001a45/cd7f32?text=Conta+Bronze",
+      title: "Bronze Operator",
+      price: "R$ 79,90",
+      operators: "Operadores: 20/46 desbloqueados",
+      skins: "3 skins comuns",
+      stats: "K/D: 0.9 | W/L: 48%",
+      description: "Conta com potencial para melhorar. Bom equilíbrio entre preço e conteúdo para jogadores em desenvolvimento.",
+      tags: [
+        { text: "Econômica", color: "bg-blue-500/20 text-blue-400" },
+        { text: "Casual", color: "bg-green-500/20 text-green-400" },
+      ],
+      featured: false,
+      level: 62,
+      platform: "xbox",
+      region: "sa",
+      createdAt: "2023-11-30"
+    },
+    {
+      id: 8,
+      rank: "ESMERALDA",
+      rankColor: "from-emerald-500 to-green-700",
+      rankIcon: "/images/accounts/rankicons/Emerald 2.png",
+      image: "/images/accounts/Y5S4_STADIUM2_CARD_Kaid.png",
+      placeholderImage: "https://placehold.co/600x400/001a45/50c878?text=Conta+Esmeralda",
+      title: "Emerald Tactician",
+      price: "R$ 249,90",
+      operators: "Operadores: 35/46 desbloqueados",
+      skins: "18 skins raras",
+      stats: "K/D: 1.4 | W/L: 58%",
+      description: "Conta de nível intermediário-avançado com bom equilíbrio entre operadores, skins e estatísticas.",
+      tags: [
+        { text: "Seasonal", color: "bg-purple-500/20 text-purple-400" },
+        { text: "Event", color: "bg-red-500/20 text-red-400" },
+      ],
+      featured: false,
+      level: 185,
+      platform: "ps",
+      region: "eu",
+      createdAt: "2023-10-10"
+    }
   ];
 
   // Calcular o número total de páginas e filtrar as contas
@@ -587,7 +713,11 @@ const AccountCatalog: React.FC = () => {
                 <div
                   className={`absolute top-3 left-3 bg-black/40 backdrop-blur-sm border border-liquid-blue/30 px-3 py-1 rounded-lg text-xs font-bold text-white shadow-[0_0_10px_rgba(0,150,255,0.2)] z-20 flex items-center gap-1 bg-gradient-to-r ${account.rankColor}`}
                 >
-                  {account.rankIcon}
+                  <img
+                    src={account.rankIcon}
+                    alt={account.rank}
+                    className="w-5 h-5 mr-1"
+                  />
                   {account.rank}
                 </div>
 
@@ -722,14 +852,18 @@ const AccountCatalog: React.FC = () => {
                     <div
                       className={`absolute top-3 left-3 bg-black/40 backdrop-blur-sm border border-liquid-blue/30 px-3 py-1 rounded-lg text-xs font-bold text-white shadow-[0_0_10px_rgba(0,150,255,0.2)] z-20 flex items-center gap-1 bg-gradient-to-r ${account.rankColor}`}
                     >
-                      {account.rankIcon}
+                      <img
+                        src={account.rankIcon}
+                        alt={account.rank}
+                        className="w-5 h-5 mr-1"
+                      />
                       {account.rank}
                     </div>
                     
                     {/* Tag de tipo de conta */}
                     {account.badgeText && (
                       <div
-                        className={`absolute top-3 right-3 ${account.badgeColor} px-3 py-1 rounded-lg text-xs font-bold z-20 shadow-[0_0_10px_rgba(0,150,255,0.2)]`}
+                        className={`absolute top-3 right-3 ${account.badgeColor} px-3 py-1 rounded-lg text-xs font-bold shadow-[0_0_10px_rgba(0,150,255,0.2)]`}
                       >
                         {account.badgeText}
                       </div>
@@ -868,58 +1002,57 @@ const AccountCatalog: React.FC = () => {
       </main>
 
       {/* Modal de detalhes da conta */}
-      {isModalOpen && selectedAccount && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+      {selectedAccount && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4" onClick={() => setSelectedAccount(null)}>
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setSelectedAccount(null)}></div>
+          
           <div 
-            ref={modalRef}
-            className="bg-gradient-to-b from-gray-900 to-black border border-liquid-blue/30 rounded-lg w-full max-w-4xl max-h-[90vh] overflow-y-auto"
+            className="bg-dark-blue-950 border border-liquid-blue/20 rounded-xl overflow-hidden shadow-lg z-10 max-w-5xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-6">
-              {/* Botão de fechar */}
-              <div className="flex justify-end mb-4">
-                <button
-                  onClick={() => setIsModalOpen(false)}
-                  className="bg-black/40 text-white p-2 rounded-full hover:bg-black/60 transition-colors"
+            {/* Cabeçalho */}
+            <div className="relative">
+              <img 
+                src={selectedAccount.image} 
+                alt={selectedAccount.title} 
+                className="w-full h-[300px] object-contain bg-gradient-to-b from-dark-blue-900 to-dark-blue-950"
+              />
+              
+              <div className="absolute top-0 left-0 p-4 flex flex-col gap-2">
+                <div 
+                  className={`bg-black/40 backdrop-blur-sm border border-liquid-blue/30 px-3 py-1 rounded-lg text-xs font-bold text-white shadow-[0_0_10px_rgba(0,150,255,0.2)] flex items-center gap-1 bg-gradient-to-r ${selectedAccount.rankColor}`}
                 >
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
+                  <img
+                    src={selectedAccount.rankIcon}
+                    alt={selectedAccount.rank}
+                    className="w-5 h-5 mr-1"
+                  />
+                  {selectedAccount.rank}
+                </div>
+                
+                {selectedAccount.badgeText && (
+                  <div 
+                    className={`${selectedAccount.badgeColor} px-3 py-1 rounded-lg text-xs font-bold shadow-[0_0_10px_rgba(0,150,255,0.2)]`}
+                  >
+                    {selectedAccount.badgeText}
+                  </div>
+                )}
               </div>
               
+              <button 
+                className="absolute top-4 right-4 bg-black/40 backdrop-blur-sm border border-white/10 w-8 h-8 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                onClick={() => setSelectedAccount(null)}
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="p-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {/* Imagem e informações */}
                 <div className="space-y-4">
-                  <div className="relative rounded-lg overflow-hidden border border-liquid-blue/30">
-                    <img
-                      src={selectedAccount.image}
-                      alt={selectedAccount.title}
-                      className="w-full h-auto object-contain bg-black/30 p-2"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = selectedAccount.placeholderImage;
-                      }}
-                    />
-                    
-                    {/* Tags sobrepostas */}
-                    <div className="absolute top-3 left-3 flex items-center gap-2">
-                      <div
-                        className={`bg-black/40 backdrop-blur-sm border border-liquid-blue/30 px-3 py-1 rounded-lg text-xs font-bold text-white shadow-[0_0_10px_rgba(0,150,255,0.2)] flex items-center gap-1 bg-gradient-to-r ${selectedAccount.rankColor}`}
-                      >
-                        {selectedAccount.rankIcon}
-                        {selectedAccount.rank}
-                      </div>
-                      
-                      {selectedAccount.badgeText && (
-                        <div
-                          className={`${selectedAccount.badgeColor} px-3 py-1 rounded-lg text-xs font-bold shadow-[0_0_10px_rgba(0,150,255,0.2)]`}
-                        >
-                          {selectedAccount.badgeText}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  
                   <div className="space-y-3">
                     {/* Tags */}
                     <div className="flex flex-wrap gap-1.5">
